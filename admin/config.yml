@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Content"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "_data/home.json"
+        format: json
+        fields:
+          - { label: "Hero Badge", name: "hero_badge", widget: "string" }
+          - { label: "Hero Headline Line 1", name: "hero_line1", widget: "string" }
+          - { label: "Hero Headline Line 2", name: "hero_line2", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_sub", widget: "text" }
+          - { label: "CTA Band Headline", name: "cta_band_headline", widget: "string" }
+          - { label: "CTA Band Subtext", name: "cta_band_sub", widget: "string" }
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "_data/about.json"
+        format: json
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_sub", widget: "text" }
+          - { label: "Story Paragraph 1", name: "story_p1", widget: "text" }
+          - { label: "Story Paragraph 2", name: "story_p2", widget: "text" }
+          - { label: "Story Paragraph 3", name: "story_p3", widget: "text" }
+
+      - name: "pricing"
+        label: "Pricing Page"
+        file: "_data/pricing.json"
+        format: json
+        fields:
+          - { label: "Starter Price", name: "starter_price", widget: "string" }
+          - { label: "Starter Tagline", name: "starter_tagline", widget: "text" }
+          - { label: "Premium Price", name: "premium_price", widget: "string" }
+          - { label: "Premium Tagline", name: "premium_tagline", widget: "text" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "_data/contact.json"
+        format: json
+        fields:
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Location Text", name: "location", widget: "string" }
+          - { label: "Response Time", name: "response_time", widget: "string" }
+          - { label: "Reassurance Text", name: "reassurance", widget: "text" }

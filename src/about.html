@@ -1,0 +1,237 @@
+---
+title: About — Cookie Digital
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="Hey, I'm the person behind Cookie Digital — a web developer serving the NY tri-state area." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-18px) rotate(6deg)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(10deg)} 50%{transform:translateY(-14px) rotate(-6deg)} }
+    .cf1{animation:floatA 6s ease-in-out infinite}
+    .cf2{animation:floatB 5s ease-in-out infinite}
+    .about-feature-row { background: var(--cream-mid); border-top: 1px solid var(--light-border); border-bottom: 1px solid var(--light-border); position: relative; overflow: hidden; }
+    .about-feature-row::before { content:''; position:absolute; inset:0; background-image:var(--grain); background-size:260px 260px; opacity:0.5; pointer-events:none; }
+    .about-feature-grid { display: grid; grid-template-columns: repeat(2,1fr); gap:0; position:relative; z-index:1; }
+    .about-feat { padding: 48px 44px; border-right: 1px solid var(--light-border); border-bottom: 1px solid var(--light-border); }
+    .about-feat:nth-child(2n) { border-right:none; }
+    .about-feat:nth-last-child(-n+2) { border-bottom:none; }
+    .about-feat__num { font-family: var(--font-display); font-size: 3.5rem; font-weight:300; color: var(--caramel); opacity:0.35; line-height:1; margin-bottom:0.5rem; }
+    .about-feat__title { font-family: var(--font-body); font-size:0.9rem; font-weight:700; color:var(--brown); margin-bottom:0.5rem; letter-spacing:0.02em; }
+    .about-feat p { font-size:0.88rem; line-height:1.7; }
+    .about-photo-band { background: var(--brown); padding: 80px 0; position: relative; overflow: hidden; }
+    .about-photo-band::before { content:''; position:absolute; inset:0; background-image:var(--grain); background-size:260px 260px; opacity:0.07; pointer-events:none; }
+    .about-photo-inner { display: grid; grid-template-columns: 1fr 1fr; gap:5rem; align-items:center; position:relative; z-index:1; }
+    .about-photo-text h2 { font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,3rem); color:var(--cream); font-weight:300; line-height:1.15; margin-bottom:1rem; }
+    .about-photo-text h2 em { color:var(--caramel-light); }
+    .about-photo-text p { color:rgba(253,246,236,0.7); margin-bottom:1rem; font-size:0.97rem; }
+    .about-photo-visual { display:flex; align-items:center; justify-content:center; position:relative; }
+    .dev-illustration { width: min(380px, 90%); height: auto; }
+    @media(max-width:900px){
+      .about-photo-inner { grid-template-columns:1fr; gap:2.5rem; }
+      .about-feature-grid { grid-template-columns:1fr; }
+      .about-feat { border-right:none; }
+      .about-feat:nth-last-child(-n+2) { border-bottom: 1px solid var(--light-border); }
+      .about-feat:last-child { border-bottom:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
+    <ul class="nav__links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/" class="nav__active">About</a></li>
+      <li><a href="/contact/" class="nav__cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="/#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="/pricing/" onclick="closeMenu()">Pricing</a></li>
+      <li><a href="/about/" onclick="closeMenu()">About</a></li>
+      <li><a href="/contact/">Get in Touch</a></li>
+    </ul>
+  </div>
+
+  <!-- DARK HERO -->
+  <section class="page-hero" style="overflow:hidden;">
+    <svg style="position:absolute;top:-60px;right:-80px;width:500px;height:500px;pointer-events:none;z-index:0;" viewBox="0 0 500 500" fill="none">
+      <circle cx="400" cy="140" r="280" stroke="#c4793a" stroke-width="2" opacity="0.2"/>
+      <circle cx="400" cy="140" r="200" stroke="#c4793a" stroke-width="2" opacity="0.17"/>
+      <circle cx="400" cy="140" r="120" stroke="#e0a055" stroke-width="2.5" opacity="0.25"/>
+      <circle cx="400" cy="140" r="55" stroke="#e0a055" stroke-width="3" opacity="0.3"/>
+      <circle cx="130" cy="60" r="6" fill="#e0a055" opacity="0.35"/>
+      <circle cx="460" cy="300" r="8" fill="#c4793a" opacity="0.3"/>
+    </svg>
+    <svg style="position:absolute;bottom:20px;left:20px;width:180px;height:180px;pointer-events:none;z-index:0;" viewBox="0 0 180 180" fill="none">
+      <g fill="#e0a055">
+        <circle cx="12" cy="12" r="3" opacity="0.3"/><circle cx="44" cy="12" r="3" opacity="0.25"/><circle cx="76" cy="12" r="3" opacity="0.2"/>
+        <circle cx="12" cy="44" r="3" opacity="0.25"/><circle cx="44" cy="44" r="3" opacity="0.3"/><circle cx="76" cy="44" r="3" opacity="0.22"/>
+        <circle cx="12" cy="76" r="3" opacity="0.2"/><circle cx="44" cy="76" r="3" opacity="0.22"/><circle cx="76" cy="76" r="3" opacity="0.28"/>
+        <circle cx="12" cy="108" r="3" opacity="0.15"/><circle cx="44" cy="108" r="3" opacity="0.18"/><circle cx="76" cy="108" r="3" opacity="0.22"/>
+      </g>
+    </svg>
+    <svg class="cf1" style="position:absolute;top:50px;right:180px;width:90px;pointer-events:none;z-index:2;" viewBox="0 0 90 90" fill="none">
+      <circle cx="45" cy="45" r="41" fill="#e0a055" opacity="0.18"/>
+      <circle cx="45" cy="45" r="41" stroke="#e0a055" stroke-width="2.5" opacity="0.5"/>
+      <circle cx="45" cy="45" r="31" stroke="#c4793a" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.35"/>
+      <ellipse cx="31" cy="31" rx="6" ry="5" fill="#fdf3e3" opacity="0.45" transform="rotate(-12 31 31)"/>
+      <ellipse cx="57" cy="35" rx="5" ry="6" fill="#fdf3e3" opacity="0.4" transform="rotate(8 57 35)"/>
+      <ellipse cx="34" cy="58" rx="6" ry="5" fill="#fdf3e3" opacity="0.42" transform="rotate(-5 34 58)"/>
+      <ellipse cx="58" cy="59" rx="5" ry="4" fill="#fdf3e3" opacity="0.38" transform="rotate(10 58 59)"/>
+    </svg>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label animate-in" style="--delay:0.05s">About Me</p>
+      <h1 class="animate-in" style="--delay:0.15s">{{ about.hero_headline }}</h1>
+      <p class="page-hero__sub animate-in" style="--delay:0.25s">{{ about.hero_sub }}</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee" aria-hidden="true">
+      <span>NY · NJ · CT</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Development</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Fair Prices</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>NY · NJ · CT</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Development</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Fair Prices</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>NY · NJ · CT</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Development</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Fair Prices</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>NY · NJ · CT</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Development</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Fair Prices</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT PHOTO BAND -->
+  <div class="about-photo-band">
+    <div class="container about-photo-inner">
+      <div class="about-photo-text">
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--caramel-light);margin-bottom:0.6rem;">The Story</p>
+        <h2>Small studio.<br /><em>Big results.</em></h2>
+        <p>{{ about.story_p1 }}</p>
+        <p>{{ about.story_p2 }}</p>
+        <p>{{ about.story_p3 }}</p>
+      </div>
+      <div class="about-photo-visual">
+        <svg class="dev-illustration" viewBox="0 0 380 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="240" width="340" height="14" rx="4" fill="#c4793a" opacity="0.5"/>
+          <rect x="40" y="254" width="300" height="60" rx="4" fill="#c4793a" opacity="0.18"/>
+          <rect x="80" y="130" width="220" height="110" rx="8" fill="#2e1c0e" opacity="0.85"/>
+          <rect x="88" y="138" width="204" height="94" rx="4" fill="#1a0f06"/>
+          <rect x="100" y="150" width="60" height="5" rx="2" fill="#c4793a" opacity="0.8"/>
+          <rect x="108" y="162" width="100" height="4" rx="2" fill="#e0a055" opacity="0.6"/>
+          <rect x="108" y="172" width="80" height="4" rx="2" fill="#fdf3e3" opacity="0.35"/>
+          <rect x="108" y="182" width="120" height="4" rx="2" fill="#e0a055" opacity="0.5"/>
+          <rect x="108" y="192" width="70" height="4" rx="2" fill="#c4793a" opacity="0.7"/>
+          <rect x="108" y="202" width="90" height="4" rx="2" fill="#fdf3e3" opacity="0.3"/>
+          <rect x="108" y="212" width="50" height="4" rx="2" fill="#e0a055" opacity="0.55"/>
+          <rect x="162" y="212" width="2" height="10" rx="1" fill="#e0a055" opacity="0.9"/>
+          <rect x="80" y="238" width="220" height="8" rx="3" fill="#2e1c0e" opacity="0.6"/>
+          <rect x="90" y="244" width="200" height="10" rx="4" fill="#2e1c0e" opacity="0.5"/>
+          <rect x="168" y="250" width="44" height="28" rx="4" fill="#1a0f06" opacity="0.5"/>
+          <rect x="310" y="200" width="36" height="42" rx="6" fill="#c4793a" opacity="0.6"/>
+          <rect x="314" y="204" width="28" height="12" rx="2" fill="#e0a055" opacity="0.35"/>
+          <path d="M346 218 Q358 218 358 228 Q358 238 346 238" stroke="#c4793a" stroke-width="3" opacity="0.5" fill="none"/>
+          <path d="M322 196 Q318 188 322 182 Q326 176 322 170" stroke="#fdf3e3" stroke-width="2" opacity="0.25" stroke-linecap="round" fill="none"/>
+          <path d="M330 194 Q326 186 330 180 Q334 174 330 168" stroke="#fdf3e3" stroke-width="2" opacity="0.2" stroke-linecap="round" fill="none"/>
+          <circle cx="58" cy="232" r="22" fill="#e0a055" opacity="0.55"/>
+          <circle cx="58" cy="232" r="22" stroke="#c4793a" stroke-width="2" opacity="0.7"/>
+          <ellipse cx="50" cy="224" rx="4.5" ry="3.5" fill="#2e1c0e" opacity="0.6" transform="rotate(-12 50 224)"/>
+          <ellipse cx="66" cy="227" rx="3.5" ry="4.5" fill="#2e1c0e" opacity="0.55" transform="rotate(10 66 227)"/>
+          <ellipse cx="52" cy="239" rx="4" ry="3.5" fill="#2e1c0e" opacity="0.58" transform="rotate(-5 52 239)"/>
+          <ellipse cx="65" cy="240" rx="3.5" ry="3" fill="#2e1c0e" opacity="0.5" transform="rotate(8 65 240)"/>
+          <rect x="32" y="165" width="28" height="50" rx="5" fill="#2e1c0e" opacity="0.7"/>
+          <rect x="35" y="170" width="22" height="36" rx="2" fill="#1a0f06"/>
+          <rect x="38" y="174" width="16" height="3" rx="1" fill="#c4793a" opacity="0.6"/>
+          <rect x="38" y="180" width="12" height="2" rx="1" fill="#e0a055" opacity="0.4"/>
+          <rect x="38" y="185" width="14" height="2" rx="1" fill="#fdf3e3" opacity="0.25"/>
+          <circle cx="280" cy="120" r="5" fill="#e0a055" opacity="0.45"/>
+          <circle cx="140" cy="100" r="4" fill="#c4793a" opacity="0.4"/>
+          <circle cx="350" cy="170" r="3" fill="#e0a055" opacity="0.35"/>
+          <circle cx="30" cy="130" r="4" fill="#c4793a" opacity="0.38"/>
+          <circle cx="190" cy="170" r="155" stroke="#c4793a" stroke-width="1.5" opacity="0.12"/>
+          <circle cx="190" cy="170" r="175" stroke="#e0a055" stroke-width="1" opacity="0.08"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURE GRID -->
+  <div class="about-feature-row">
+    <div class="container about-feature-grid">
+      <div class="about-feat"><div class="about-feat__num">01</div><div class="about-feat__title">Direct Access</div><p>You talk to me, not a middleman. Fast replies, zero runaround — always.</p></div>
+      <div class="about-feat"><div class="about-feat__num">02</div><div class="about-feat__title">Honest Timelines</div><p>If I say two weeks, I mean two weeks. You'll hear from me before you have to follow up.</p></div>
+      <div class="about-feat"><div class="about-feat__num">03</div><div class="about-feat__title">Tri-State Focus</div><p>{{ about.location_text }}</p></div>
+      <div class="about-feat"><div class="about-feat__num">04</div><div class="about-feat__title">No Hidden Fees</div><p>Two clear plans, everything listed upfront. Small tweaks after launch? No charge.</p></div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section class="values section" style="overflow:hidden;">
+    <svg style="position:absolute;bottom:-60px;left:-60px;width:420px;pointer-events:none;z-index:0;" viewBox="0 0 420 420" fill="none">
+      <circle cx="0" cy="420" r="260" stroke="#c4793a" stroke-width="2" opacity="0.16"/>
+      <circle cx="0" cy="420" r="190" stroke="#c4793a" stroke-width="2" opacity="0.13"/>
+      <circle cx="0" cy="420" r="120" stroke="#e0a055" stroke-width="2.5" opacity="0.18"/>
+      <circle cx="0" cy="420" r="55" stroke="#e0a055" stroke-width="3" opacity="0.22"/>
+    </svg>
+    <svg class="cf1" style="position:absolute;bottom:40px;right:50px;width:110px;pointer-events:none;z-index:2;" viewBox="0 0 110 110" fill="none">
+      <circle cx="55" cy="55" r="50" fill="#e0a055" opacity="0.22"/>
+      <circle cx="55" cy="55" r="50" stroke="#c4793a" stroke-width="3" opacity="0.65"/>
+      <circle cx="55" cy="55" r="38" stroke="#c4793a" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.42"/>
+      <ellipse cx="39" cy="38" rx="7.5" ry="6" fill="#2e1c0e" opacity="0.58" transform="rotate(-12 39 38)"/>
+      <ellipse cx="68" cy="42" rx="6" ry="7.5" fill="#2e1c0e" opacity="0.52" transform="rotate(8 68 42)"/>
+      <ellipse cx="42" cy="70" rx="7.5" ry="6" fill="#2e1c0e" opacity="0.55" transform="rotate(-5 42 70)"/>
+      <ellipse cx="69" cy="71" rx="6" ry="5.5" fill="#2e1c0e" opacity="0.48" transform="rotate(10 69 71)"/>
+      <ellipse cx="55" cy="55" rx="5" ry="4" fill="#2e1c0e" opacity="0.4" transform="rotate(-8 55 55)"/>
+    </svg>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-header">
+        <p class="section-label">How I Work</p>
+        <h2 class="section-title">The stuff I actually care about.</h2>
+      </div>
+      <div class="values__grid">
+        <div class="value-card"><div class="value-card__icon">💬</div><h3>Straight talk</h3><p>I'll tell you if something's a bad idea. Honest feedback over empty agreement, every time.</p></div>
+        <div class="value-card"><div class="value-card__icon">📅</div><h3>Deadlines I keep</h3><p>If I say two weeks, I mean two weeks — not two weeks plus a bunch of follow-up emails from you.</p></div>
+        <div class="value-card"><div class="value-card__icon">🔍</div><h3>Attention to detail</h3><p>Spacing, load times, mobile layouts — the little things add up to a site that feels polished.</p></div>
+        <div class="value-card"><div class="value-card__icon">🤝</div><h3>You're not a ticket</h3><p>You'll work with me directly, start to finish. No handoffs, no mystery team behind the curtain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="position:relative;overflow:hidden;">
+    <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
+      <circle cx="80" cy="250" r="270" stroke="#fdf3e3" stroke-width="1.5" opacity="0.09"/>
+      <circle cx="80" cy="250" r="190" stroke="#fdf3e3" stroke-width="2" opacity="0.11"/>
+      <circle cx="80" cy="250" r="110" stroke="#fdf3e3" stroke-width="2.5" opacity="0.14"/>
+    </svg>
+    <div class="container cta-band__inner" style="position:relative;z-index:1;">
+      <h2>Want to work together?</h2>
+      <p>I'd love to hear about your project — even if you're not sure what you need yet.</p>
+      <a href="/contact/" class="btn btn--light">Get in Touch →</a>
+    </div>
+  </section>
+
+  <footer class="footer" style="position:relative;overflow:hidden;">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
+        <p>Serving NY, NJ & CT — and beyond.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col"><h4>Pages</h4><a href="/">Home</a><a href="/pricing/">Pricing</a><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+        <div class="footer__col"><h4>Services</h4><a href="#">Web Design</a><a href="#">Development</a><a href="#">E-commerce</a><a href="#">Maintenance</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>© 2026 Cookie Digital. All rights reserved.</p></div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
