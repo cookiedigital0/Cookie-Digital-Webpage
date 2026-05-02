@@ -155,7 +155,7 @@ p { line-height: 1.85; color: var(--mid); font-size: 0.97rem; }
   padding-bottom: 130px;
   border-bottom: 1px solid var(--light-border);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 /* Soft warm tonal background swatch */
 .hero--simple::after {
