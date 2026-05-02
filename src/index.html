@@ -11,12 +11,12 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
     .section { padding: 80px 0; }
     .hero--simple { min-height: 92vh; display: flex; align-items: center; background: var(--cream); overflow: visible !important; padding-bottom: 160px !important; }
-    .hero__headline { overflow: visible !important; padding-bottom: 0.4em !important; line-height: 1.5 !important; }
-    .hero__headline em { display: inline-block !important; overflow: visible !important; padding-bottom: 0.2em !important; line-height: 1.6 !important; }
+    .hero__headline { overflow: visible !important; padding-bottom: 0.5em !important; line-height: 1.5 !important; }
+    .hero__headline em { display: block !important; overflow: visible !important; padding-bottom: 0.35em !important; line-height: 1.6 !important; }
     .cookie-float { position: absolute; pointer-events: none; z-index: 2; }
     @keyframes cookieSpin { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-22px) rotate(8deg)} }
     @keyframes cookieSpin2 { 0%,100%{transform:translateY(0) rotate(12deg)} 50%{transform:translateY(-16px) rotate(-6deg)} }
@@ -143,7 +143,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     <div class="container" style="position:relative;z-index:1;">
       <div class="hero__content animate-in" style="--delay:0.1s">
         <div class="hero__badge">{{ home.hero_badge }}</div>
-        <h1 class="hero__headline" style="padding-bottom:0.35em;overflow:visible;line-height:1.45;">{{ home.hero_line1 }}<br /><em style="display:inline-block;padding-bottom:0.1em;">{{ home.hero_line2 }}</em></h1>
+        <h1 class="hero__headline">{{ home.hero_line1 }}<br /><em>{{ home.hero_line2 }}</em></h1>
         <p class="hero__sub">{{ home.hero_sub }}</p>
         <div class="hero__actions">
           <a href="/contact/" class="btn btn--primary">Let's Talk →</a>
