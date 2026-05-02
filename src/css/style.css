@@ -2,7 +2,7 @@
    COOKIE DIGITAL — Main Stylesheet
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&family=Playfair+Display:ital@1&display=swap');
 
 :root {
   /* Warm cream palette — no pure whites anywhere */
@@ -45,11 +45,11 @@ ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
 /* ---- TYPOGRAPHY ---- */
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.45; overflow: visible; }
-h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); padding-bottom: 0.25em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); padding-bottom: 0.15em; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.5; overflow: visible; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); }
 h3 { font-size: 1.15rem; }
-em { font-style: italic; color: var(--caramel); display: inline-block; overflow: visible; }
+em { font-style: italic; color: var(--caramel); font-family: 'Playfair Display', Georgia, serif; }
 p { line-height: 1.85; color: var(--mid); font-size: 0.97rem; }
 
 /* ---- CONTAINER ---- */
