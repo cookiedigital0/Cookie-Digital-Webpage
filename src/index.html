@@ -36,7 +36,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     .zigzag__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative; z-index: 1; }
     .zigzag__text { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
     .zigzag__visual { display: flex; align-items: center; justify-content: center; padding: 60px; position: relative; }
-    .testimonial-band { background: var(--brown); padding: 80px 0; position: relative; overflow: hidden; }
+    .testimonial-band { background: #111111; padding: 80px 0; position: relative; overflow: hidden; }
     .testimonial-band::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.06; }
     .testimonial-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .testimonial-quote { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; color: #ffffff; line-height: 1.5; margin-bottom: 1.5rem; }
@@ -104,7 +104,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
       <circle cx="500" cy="200" r="32" fill="#8B5E3C" opacity="0.25"/>
     </svg>
     <svg style="position:absolute;bottom:40px;left:20px;width:220px;height:220px;pointer-events:none;z-index:0;" viewBox="0 0 220 220" fill="none">
-      <g fill="#8B5E3C">
+      <g fill="#8B5E3C" opacity="0.25">
         <circle cx="14" cy="14" r="4" opacity="0.4"/><circle cx="50" cy="14" r="4" opacity="0.34"/><circle cx="86" cy="14" r="4" opacity="0.28"/><circle cx="122" cy="14" r="4" opacity="0.22"/>
         <circle cx="14" cy="50" r="4" opacity="0.34"/><circle cx="50" cy="50" r="4" opacity="0.4"/><circle cx="86" cy="50" r="4" opacity="0.32"/><circle cx="122" cy="50" r="4" opacity="0.26"/>
         <circle cx="14" cy="86" r="4" opacity="0.28"/><circle cx="50" cy="86" r="4" opacity="0.32"/><circle cx="86" cy="86" r="4" opacity="0.38"/><circle cx="122" cy="86" r="4" opacity="0.3"/>
@@ -127,14 +127,6 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
 
   <!-- STATS -->
   <div class="stats-row">
-    <svg style="position:absolute;right:60px;top:50%;transform:translateY(-50%);width:120px;opacity:0.15;pointer-events:none;" viewBox="0 0 120 120" fill="none">
-      <circle cx="60" cy="60" r="54" stroke="#fdf3e3" stroke-width="2.5"/>
-      <circle cx="60" cy="60" r="40" stroke="#fdf3e3" stroke-width="1.2" stroke-dasharray="6 5"/>
-      <ellipse cx="43" cy="42" rx="7" ry="6" fill="#fdf3e3" transform="rotate(-12 43 42)"/>
-      <ellipse cx="75" cy="47" rx="6" ry="7" fill="#fdf3e3" transform="rotate(8 75 47)"/>
-      <ellipse cx="46" cy="74" rx="7" ry="6" fill="#fdf3e3" transform="rotate(-5 46 74)"/>
-      <ellipse cx="75" cy="76" rx="6" ry="5" fill="#fdf3e3" transform="rotate(10 75 76)"/>
-    </svg>
     <div class="container stats-row__inner">
       <div class="stat-item"><div class="stat-item__num">100%</div><div class="stat-item__label">Built from scratch</div></div>
       <div class="stat-item"><div class="stat-item__num">48hr</div><div class="stat-item__label">Avg. response time</div></div>
@@ -228,10 +220,10 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <!-- PRICING TEASER -->
   <section class="pricing-teaser section" style="position:relative;overflow:hidden;">
     <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;z-index:0;" viewBox="0 0 1200 180" preserveAspectRatio="none" fill="none">
-      <path d="M0 60 Q150 20 300 60 Q450 100 600 60 Q750 20 900 60 Q1050 100 1200 60" stroke="#c4793a" stroke-width="2.5" opacity="0.22"/>
+      <path d="M0 60 Q150 20 300 60 Q450 100 600 60 Q750 20 900 60 Q1050 100 1200 60" stroke="#ffffff" stroke-width="1.5" opacity="0.08"/>
       <path d="M0 90 Q150 50 300 90 Q450 130 600 90 Q750 50 900 90 Q1050 130 1200 90" stroke="#c4793a" stroke-width="2" opacity="0.17"/>
-      <path d="M0 120 Q150 80 300 120 Q450 160 600 120 Q750 80 900 120 Q1050 160 1200 120" stroke="#e0a055" stroke-width="1.8" opacity="0.2"/>
-      <path d="M0 150 Q150 120 300 150 Q450 180 600 150 Q750 120 900 150 Q1050 180 1200 150" stroke="#e0a055" stroke-width="1.2" opacity="0.14"/>
+      <path d="M0 120 Q150 80 300 120 Q450 160 600 120 Q750 80 900 120 Q1050 160 1200 120" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
+      <path d="M0 150 Q150 120 300 150 Q450 180 600 150 Q750 120 900 150 Q1050 180 1200 150" stroke="#8B5E3C" stroke-width="1" opacity="0.1"/>
     </svg>
     <div class="container pricing-teaser__inner" style="position:relative;z-index:1;">
       <div>
@@ -286,18 +278,33 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <div class="testimonial-band">
-    <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
-      <circle cx="80" cy="250" r="280" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
-      <circle cx="80" cy="250" r="200" stroke="#fdf3e3" stroke-width="1.5" opacity="0.07"/>
-      <circle cx="80" cy="250" r="120" stroke="#fdf3e3" stroke-width="2" opacity="0.1"/>
-      <circle cx="80" cy="250" r="50" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
-    </svg>
-    <div class="container testimonial-inner">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-quote">"Working with Cookie Digital was the easiest thing about launching my business. The site looks incredible and I had zero stress throughout."</p>
-      <div class="testimonial-attr">— A Happy Client · NYC Small Business Owner</div>
+
+  <!-- FEATURE STRIP — fills space after removing testimonial -->
+  <div style="background:#111111;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:60px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:var(--grain);background-size:280px 280px;opacity:0.45;pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;">
+        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;">⚡</div>
+          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">2–4 week delivery</div>
+          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">No months of waiting. Most sites are live in under a month.</p>
+        </div>
+        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🎯</div>
+          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">Built for results</div>
+          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">Every decision is made to help your business, not just look good.</p>
+        </div>
+        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🔒</div>
+          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">No surprise fees</div>
+          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">Flat-rate pricing. You know exactly what you're paying before we start.</p>
+        </div>
+        <div style="padding:32px 28px;">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🤝</div>
+          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">Work with me directly</div>
+          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">No middlemen. You talk to me start to finish, every time.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -324,7 +331,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <!-- FOOTER -->
   <footer class="footer" style="position:relative;overflow:hidden;">
     <svg style="position:absolute;bottom:40px;right:40px;width:220px;height:160px;pointer-events:none;" viewBox="0 0 220 160" fill="none">
-      <g fill="#8B5E3C">
+      <g fill="#8B5E3C" opacity="0.25">
         <circle cx="12" cy="12" r="3.5" opacity="0.24"/><circle cx="48" cy="12" r="3.5" opacity="0.2"/><circle cx="84" cy="12" r="3.5" opacity="0.17"/><circle cx="120" cy="12" r="3.5" opacity="0.14"/><circle cx="156" cy="12" r="3.5" opacity="0.11"/>
         <circle cx="12" cy="48" r="3.5" opacity="0.2"/><circle cx="48" cy="48" r="3.5" opacity="0.24"/><circle cx="84" cy="48" r="3.5" opacity="0.21"/><circle cx="120" cy="48" r="3.5" opacity="0.18"/><circle cx="156" cy="48" r="3.5" opacity="0.14"/>
         <circle cx="12" cy="84" r="3.5" opacity="0.17"/><circle cx="48" cy="84" r="3.5" opacity="0.21"/><circle cx="84" cy="84" r="3.5" opacity="0.24"/><circle cx="120" cy="84" r="3.5" opacity="0.2"/><circle cx="156" cy="84" r="3.5" opacity="0.16"/>
