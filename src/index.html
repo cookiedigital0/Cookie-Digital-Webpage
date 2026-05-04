@@ -14,7 +14,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
     .section { padding: 80px 0; }
-    .hero--simple { min-height: 100vh; display: flex; align-items: center; background: #0a0a0a; overflow: visible !important; padding: 120px 0 80px; }
+    .hero--simple { min-height: 100vh; display: flex; align-items: center; background: #f8f6f3; overflow: visible !important; padding: 120px 0 80px; }
     .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero__headline { overflow: visible !important; padding-bottom: 0.3em !important; line-height: 1.35 !important; font-size: clamp(2.4rem, 4.5vw, 4rem) !important; }
     .hero__headline em { display: block !important; overflow: visible !important; padding-bottom: 0.2em !important; line-height: 1.4 !important; }
@@ -22,30 +22,30 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(74,143,212,0.15); border: 1px solid rgba(74,143,212,0.3); color: #6aaee8; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
     .hero__sub { color: #aaaaaa; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; }
     .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .hero-card { background: #141414; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; width: 100%; max-width: 420px; position: relative; overflow: hidden; }
+    .hero-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; padding: 2rem; width: 100%; max-width: 420px; position: relative; overflow: hidden; }
     .hero-card::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 240px 240px; opacity: 0.4; pointer-events: none; }
     .hero-card__top { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
     .hero-card__dot { width: 10px; height: 10px; border-radius: 50%; }
-    .hero-card__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-left: auto; }
-    .hero-card__title { font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 1.25rem; font-weight: 400; position: relative; z-index: 1; }
+    .hero-card__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.3); margin-left: auto; }
+    .hero-card__title { font-family: var(--font-display); font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1.25rem; font-weight: 400; position: relative; z-index: 1; }
     .hero-card__bars { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
     .hero-card__bar-row { display: flex; align-items: center; gap: 0.75rem; }
-    .hero-card__bar-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); width: 80px; flex-shrink: 0; }
-    .hero-card__bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
+    .hero-card__bar-label { font-size: 0.72rem; color: rgba(0,0,0,0.45); width: 80px; flex-shrink: 0; }
+    .hero-card__bar-track { flex: 1; height: 6px; background: rgba(0,0,0,0.06); border-radius: 999px; overflow: hidden; }
     .hero-card__bar-fill { height: 100%; border-radius: 999px; background: #4A8FD4; }
     .hero-card__bar-val { font-size: 0.72rem; font-weight: 700; color: #4A8FD4; width: 32px; text-align: right; flex-shrink: 0; }
-    .hero-card__divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1.25rem; position: relative; z-index: 1; }
+    .hero-card__divider { height: 1px; background: rgba(0,0,0,0.06); margin-bottom: 1.25rem; position: relative; z-index: 1; }
     .hero-card__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; position: relative; z-index: 1; }
-    .hero-card__stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: #ffffff; line-height: 1; }
-    .hero-card__stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+    .hero-card__stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: #1a1a1a; line-height: 1; }
+    .hero-card__stat-label { font-size: 0.68rem; color: rgba(0,0,0,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
     .hero-card__tag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(74,143,212,0.15); border: 1px solid rgba(74,143,212,0.25); border-radius: 8px; padding: 0.5rem 0.75rem; }
     .hero-card__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: #4A8FD4; }
     .hero-card__tag-text { font-size: 0.72rem; font-weight: 600; color: #6aaee8; }
-    .hero-mini-card { position: absolute; background: #1e1e1e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.75rem 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 10; }
+    .hero-mini-card { position: absolute; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; padding: 0.75rem 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 10; }
     .hero-mini-card--tl { top: -16px; left: -16px; }
     .hero-mini-card--br { bottom: -16px; right: -16px; }
-    .hero-mini-label { font-size: 0.62rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; font-family: var(--font-body); }
-    .hero-mini-val { font-size: 0.9rem; font-weight: 700; color: #ffffff; font-family: var(--font-body); }
+    .hero-mini-label { font-size: 0.62rem; color: rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; font-family: var(--font-body); }
+    .hero-mini-val { font-size: 0.9rem; font-weight: 700; color: #1a1a1a; font-family: var(--font-body); }
     @media (max-width: 900px) { .hero__inner { grid-template-columns: 1fr; } .hero__visual { display: none; } }
     .cookie-float { position: absolute; pointer-events: none; z-index: 2; }
     @keyframes cookieSpin { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-22px) rotate(8deg)} }
@@ -54,14 +54,14 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     .cf1 { animation: cookieSpin 6s ease-in-out infinite; }
     .cf2 { animation: cookieSpin2 5s ease-in-out infinite; }
     .cf3 { animation: cookieSpin3 7s ease-in-out infinite; }
-    .stats-row { background: #111111; padding: 48px 0; position: relative; overflow: hidden; }
+    .stats-row { background: #f0ede8; padding: 48px 0; position: relative; overflow: hidden; }
     .stats-row::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.08; }
     .stats-row__inner { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; z-index: 1; }
-    .stat-item { text-align: center; padding: 24px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .stat-item { text-align: center; padding: 24px 20px; border-right: 1px solid rgba(0,0,0,0.08); }
     .stat-item:last-child { border-right: none; }
-    .stat-item__num { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 300; color: #ffffff; line-height: 1; margin-bottom: 0.35rem; }
-    .stat-item__label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-    .zigzag { background: #111111; position: relative; overflow: hidden; }
+    .stat-item__num { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 300; color: #1a1a1a; line-height: 1; margin-bottom: 0.35rem; }
+    .stat-item__label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.45); }
+    .zigzag { background: #f0ede8; position: relative; overflow: hidden; }
     .zigzag::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.5; }
     .zigzag__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative; z-index: 1; }
     .zigzag__text { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
@@ -69,23 +69,23 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     .testimonial-band { background: var(--brown); padding: 80px 0; position: relative; overflow: hidden; }
     .testimonial-band::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.06; }
     .testimonial-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-    .testimonial-quote { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; color: #ffffff; line-height: 1.5; margin-bottom: 1.5rem; }
+    .testimonial-quote { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; color: #1a1a1a; line-height: 1.5; margin-bottom: 1.5rem; }
     .testimonial-attr { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #4A8FD4; }
     .testimonial-stars { font-size: 1.2rem; color: #4A8FD4; margin-bottom: 1.5rem; letter-spacing: 0.15em; }
     .process-visual { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 60px; }
-    .pv-step { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); position: relative; }
+    .pv-step { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(0,0,0,0.06); position: relative; }
     .pv-step:last-child { border-right: none; }
     .pv-step__num { font-family: var(--font-display); font-size: 5rem; font-weight: 300; color: #4A8FD4; opacity: 0.25; line-height: 1; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); }
     .pv-step__icon { font-size: 2.2rem; margin-bottom: 1rem; position: relative; z-index: 1; margin-top: 40px; }
-    .pv-step__title { font-family: var(--font-body); font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; position: relative; z-index: 1; }
-    .pv-step__text { font-size: 0.82rem; color: #aaaaaa; line-height: 1.6; position: relative; z-index: 1; }
-    .feature-band { background: #111111; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 64px 0; position: relative; overflow: hidden; }
+    .pv-step__title { font-family: var(--font-body); font-size: 0.88rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .pv-step__text { font-size: 0.82rem; color: #666666; line-height: 1.6; position: relative; z-index: 1; }
+    .feature-band { background: #f0ede8; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 64px 0; position: relative; overflow: hidden; }
     .feature-band::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.45; }
     .feature-band__inner { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; z-index: 1; }
-    .feat { padding: 32px 36px; border-right: 1px solid rgba(255,255,255,0.06); }
+    .feat { padding: 32px 36px; border-right: 1px solid rgba(0,0,0,0.06); }
     .feat:last-child { border-right: none; }
     .feat__icon { font-size: 1.8rem; margin-bottom: 1rem; color: #4A8FD4; }
-    .feat__title { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; }
+    .feat__title { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
     .feat__text { font-size: 0.86rem; line-height: 1.65; }
     @media (max-width: 900px) {
       .zigzag__inner { grid-template-columns: 1fr; }
@@ -128,7 +128,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <section class="hero hero--simple" style="position:relative; overflow:visible;">
     <svg style="position:absolute;top:-100px;right:-120px;width:700px;height:700px;pointer-events:none;z-index:0;" viewBox="0 0 700 700" fill="none">
       <circle cx="500" cy="200" r="350" stroke="#ffffff" stroke-width="1.5" opacity="0.06"/>
-      <circle cx="500" cy="200" r="260" stroke="#ffffff" stroke-width="1" opacity="0.05"/>
+      <circle cx="500" cy="200" r="260" stroke="#000000" stroke-width="1" opacity="0.06"/>
       <circle cx="500" cy="200" r="170" stroke="#4A8FD4" stroke-width="2" opacity="0.2"/>
       <circle cx="500" cy="200" r="90" stroke="#4A8FD4" stroke-width="2" opacity="0.25"/>
       <circle cx="500" cy="200" r="32" fill="#4A8FD4" opacity="0.25"/>
@@ -234,10 +234,10 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   </div>
 
   <!-- SERVICES -->
-  <section class="services section" id="services" style="position:relative;overflow:hidden;background:#0a0a0a;">
+  <section class="services section" id="services" style="position:relative;overflow:hidden;background:#f8f6f3;">
     <svg style="position:absolute;top:-80px;right:-80px;width:550px;height:550px;pointer-events:none;z-index:0;" viewBox="0 0 550 550" fill="none">
-      <circle cx="450" cy="100" r="300" stroke="#ffffff" stroke-width="1" opacity="0.05"/>
-      <circle cx="450" cy="100" r="220" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="450" cy="100" r="300" stroke="#000000" stroke-width="1" opacity="0.06"/>
+      <circle cx="450" cy="100" r="220" stroke="#000000" stroke-width="1" opacity="0.05"/>
       <circle cx="450" cy="100" r="140" stroke="#4A8FD4" stroke-width="1.5" opacity="0.18"/>
       <circle cx="450" cy="100" r="65" stroke="#6aaee8" stroke-width="3" opacity="0.26"/>
     </svg>
@@ -271,9 +271,9 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     <div class="zigzag__inner">
       <div class="zigzag__text">
         <p class="section-label">About Me</p>
-        <h2 style="font-family:var(--font-display);font-size:clamp(1.7rem,3.5vw,2.8rem);color:#ffffff;font-weight:300;line-height:1.15;margin-bottom:1rem;">One developer.<br /><em style="color:#4A8FD4">Real results.</em></h2>
-        <p style="margin-bottom:1rem;color:#aaaaaa;">I started Cookie Digital because small businesses deserve great websites — not overpriced agency work or generic templates.</p>
-        <p style="margin-bottom:1.75rem;color:#aaaaaa;">You work directly with me, start to finish. No handoffs, no mystery team, no "that's out of scope."</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.7rem,3.5vw,2.8rem);color:#1a1a1a;font-weight:300;line-height:1.15;margin-bottom:1rem;">One developer.<br /><em style="color:#4A8FD4">Real results.</em></h2>
+        <p style="margin-bottom:1rem;color:#666666;">I started Cookie Digital because small businesses deserve great websites — not overpriced agency work or generic templates.</p>
+        <p style="margin-bottom:1.75rem;color:#666666;">You work directly with me, start to finish. No handoffs, no mystery team, no "that's out of scope."</p>
         <a href="/about/" class="btn btn--primary">Learn More →</a>
       </div>
       <div class="zigzag__visual">
@@ -348,7 +348,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   </section>
 
   <!-- PROCESS -->
-  <section class="section" style="background:#0a0a0a;position:relative;overflow:hidden;padding-top:80px;padding-bottom:0;">
+  <section class="section" style="background:#f8f6f3;position:relative;overflow:hidden;padding-top:80px;padding-bottom:0;">
     <svg style="position:absolute;bottom:0;right:0;width:320px;height:320px;pointer-events:none;z-index:0;" viewBox="0 0 320 320" fill="none">
       <g stroke="#ffffff" stroke-width="1" opacity="0.06">
         <line x1="0" y1="50" x2="50" y2="0"/><line x1="0" y1="90" x2="90" y2="0"/>
@@ -377,20 +377,6 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <div class="testimonial-band">
-    <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
-      <circle cx="80" cy="250" r="280" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
-      <circle cx="80" cy="250" r="200" stroke="#fdf3e3" stroke-width="1.5" opacity="0.07"/>
-      <circle cx="80" cy="250" r="120" stroke="#fdf3e3" stroke-width="2" opacity="0.1"/>
-      <circle cx="80" cy="250" r="50" stroke="#4A8FD4" stroke-width="1.5" opacity="0.15"/>
-    </svg>
-    <div class="container testimonial-inner">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-quote">"Working with Cookie Digital was the easiest thing about launching my business. The site looks incredible and I had zero stress throughout."</p>
-      <div class="testimonial-attr">— A Happy Client · NYC Small Business Owner</div>
-    </div>
-  </div>
 
   <!-- CTA BAND -->
   <section class="cta-band" style="position:relative;overflow:hidden;">
@@ -401,7 +387,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
       <circle cx="80" cy="300" r="62" stroke="#fdf3e3" stroke-width="3" opacity="0.16"/>
     </svg>
     <svg style="position:absolute;right:-100px;top:-80px;width:400px;height:400px;pointer-events:none;" viewBox="0 0 400 400" fill="none">
-      <circle cx="380" cy="50" r="220" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="380" cy="50" r="220" stroke="#000000" stroke-width="1" opacity="0.05"/>
       <circle cx="380" cy="50" r="140" stroke="#fdf3e3" stroke-width="2" opacity="0.1"/>
       <circle cx="380" cy="50" r="65" stroke="#4A8FD4" stroke-width="1.5" opacity="0.15"/>
     </svg>
