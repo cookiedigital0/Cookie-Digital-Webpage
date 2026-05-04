@@ -17,28 +17,28 @@ title: About — Cookie Digital
     @keyframes floatB { 0%,100%{transform:translateY(0) rotate(10deg)} 50%{transform:translateY(-14px) rotate(-6deg)} }
     .cf1{animation:floatA 6s ease-in-out infinite}
     .cf2{animation:floatB 5s ease-in-out infinite}
-    .about-feature-row { background: #141414; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); position: relative; overflow: hidden; }
+    .about-feature-row { background: var(--cream-mid); border-top: 1px solid var(--light-border); border-bottom: 1px solid var(--light-border); position: relative; overflow: hidden; }
     .about-feature-row::before { content:''; position:absolute; inset:0; background-image:var(--grain); background-size:260px 260px; opacity:0.5; pointer-events:none; }
     .about-feature-grid { display: grid; grid-template-columns: repeat(2,1fr); gap:0; position:relative; z-index:1; }
-    .about-feat { padding: 48px 44px; border-right: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .about-feat { padding: 48px 44px; border-right: 1px solid var(--light-border); border-bottom: 1px solid var(--light-border); }
     .about-feat:nth-child(2n) { border-right:none; }
     .about-feat:nth-last-child(-n+2) { border-bottom:none; }
-    .about-feat__num { font-family: var(--font-display); font-size: 3.5rem; font-weight:300; color: #8B5E3C; opacity:0.5; line-height:1; margin-bottom:0.5rem; }
-    .about-feat__title { font-family: var(--font-body); font-size:0.9rem; font-weight:700; color:#ffffff; margin-bottom:0.5rem; letter-spacing:0.02em; }
-    .about-feat p { font-size:0.88rem; line-height:1.7; color:#aaaaaa; }
-    .about-photo-band { background: #111111; padding: 80px 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .about-feat__num { font-family: var(--font-display); font-size: 3.5rem; font-weight:300; color: var(--caramel); opacity:0.35; line-height:1; margin-bottom:0.5rem; }
+    .about-feat__title { font-family: var(--font-body); font-size:0.9rem; font-weight:700; color:var(--brown); margin-bottom:0.5rem; letter-spacing:0.02em; }
+    .about-feat p { font-size:0.88rem; line-height:1.7; }
+    .about-photo-band { background: var(--brown); padding: 80px 0; position: relative; overflow: hidden; }
     .about-photo-band::before { content:''; position:absolute; inset:0; background-image:var(--grain); background-size:260px 260px; opacity:0.07; pointer-events:none; }
     .about-photo-inner { display: grid; grid-template-columns: 1fr 1fr; gap:5rem; align-items:center; position:relative; z-index:1; }
-    .about-photo-text h2 { font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,3rem); color:#ffffff; font-weight:300; line-height:1.15; margin-bottom:1rem; }
-    .about-photo-text h2 em { color:#8B5E3C; }
-    .about-photo-text p { color:#aaaaaa; margin-bottom:1rem; font-size:0.97rem; }
+    .about-photo-text h2 { font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,3rem); color:var(--cream); font-weight:300; line-height:1.15; margin-bottom:1rem; }
+    .about-photo-text h2 em { color:var(--caramel-light); }
+    .about-photo-text p { color:rgba(253,246,236,0.7); margin-bottom:1rem; font-size:0.97rem; }
     .about-photo-visual { display:flex; align-items:center; justify-content:center; position:relative; }
     .dev-illustration { width: min(380px, 90%); height: auto; }
     @media(max-width:900px){
       .about-photo-inner { grid-template-columns:1fr; gap:2.5rem; }
       .about-feature-grid { grid-template-columns:1fr; }
       .about-feat { border-right:none; }
-      .about-feat:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .about-feat:nth-last-child(-n+2) { border-bottom: 1px solid var(--light-border); }
       .about-feat:last-child { border-bottom:none; }
     }
   </style>
@@ -46,7 +46,7 @@ title: About — Cookie Digital
 <body>
 
   <nav class="nav" id="nav">
-    <a href="/" class="nav__logo">🍪 Cookie Digital</a>
+    <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
     <ul class="nav__links">
       <li><a href="/#services">Services</a></li>
       <li><a href="/pricing/">Pricing</a></li>
@@ -68,15 +68,15 @@ title: About — Cookie Digital
   <!-- DARK HERO -->
   <section class="page-hero" style="overflow:hidden;">
     <svg style="position:absolute;top:-60px;right:-80px;width:500px;height:500px;pointer-events:none;z-index:0;" viewBox="0 0 500 500" fill="none">
-      <circle cx="400" cy="140" r="280" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
-      <circle cx="400" cy="140" r="200" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
-      <circle cx="400" cy="140" r="120" stroke="#8B5E3C" stroke-width="1.5" opacity="0.2"/>
-      <circle cx="400" cy="140" r="55" stroke="#8B5E3C" stroke-width="2" opacity="0.25"/>
-      <circle cx="130" cy="60" r="6" fill="#8B5E3C" opacity="0.3"/>
-      <circle cx="460" cy="300" r="8" fill="#8B5E3C" opacity="0.25"/>
+      <circle cx="400" cy="140" r="280" stroke="#c4793a" stroke-width="2" opacity="0.2"/>
+      <circle cx="400" cy="140" r="200" stroke="#c4793a" stroke-width="2" opacity="0.17"/>
+      <circle cx="400" cy="140" r="120" stroke="#e0a055" stroke-width="2.5" opacity="0.25"/>
+      <circle cx="400" cy="140" r="55" stroke="#e0a055" stroke-width="3" opacity="0.3"/>
+      <circle cx="130" cy="60" r="6" fill="#e0a055" opacity="0.35"/>
+      <circle cx="460" cy="300" r="8" fill="#c4793a" opacity="0.3"/>
     </svg>
     <svg style="position:absolute;bottom:20px;left:20px;width:180px;height:180px;pointer-events:none;z-index:0;" viewBox="0 0 180 180" fill="none">
-      <g fill="#8B5E3C">
+      <g fill="#e0a055">
         <circle cx="12" cy="12" r="3" opacity="0.3"/><circle cx="44" cy="12" r="3" opacity="0.25"/><circle cx="76" cy="12" r="3" opacity="0.2"/>
         <circle cx="12" cy="44" r="3" opacity="0.25"/><circle cx="44" cy="44" r="3" opacity="0.3"/><circle cx="76" cy="44" r="3" opacity="0.22"/>
         <circle cx="12" cy="76" r="3" opacity="0.2"/><circle cx="44" cy="76" r="3" opacity="0.22"/><circle cx="76" cy="76" r="3" opacity="0.28"/>
@@ -104,7 +104,7 @@ title: About — Cookie Digital
   <div class="about-photo-band">
     <div class="container about-photo-inner">
       <div class="about-photo-text">
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#8B5E3C;margin-bottom:0.6rem;">The Story</p>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--caramel-light);margin-bottom:0.6rem;">The Story</p>
         <h2>Small studio.<br /><em>Big results.</em></h2>
         <p>{{ about.story_p1 }}</p>
         <p>{{ about.story_p2 }}</p>
@@ -113,9 +113,9 @@ title: About — Cookie Digital
       <div class="about-photo-visual">
         <svg class="dev-illustration" viewBox="0 0 380 340" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="20" y="240" width="340" height="14" rx="4" fill="#c4793a" opacity="0.5"/>
-          <rect x="40" y="254" width="300" height="60" rx="4" fill="#c4793a" opacity="0.18"/>
+          <rect x="40" y="254" width="300" height="60" rx="4" fill="#8B5E3C" opacity="0.15"/>
           <rect x="80" y="130" width="220" height="110" rx="8" fill="#2e1c0e" opacity="0.85"/>
-          <rect x="88" y="138" width="204" height="94" rx="4" fill="#0a0a0a"/>
+          <rect x="88" y="138" width="204" height="94" rx="4" fill="#1a0f06"/>
           <rect x="100" y="150" width="60" height="5" rx="2" fill="#c4793a" opacity="0.8"/>
           <rect x="108" y="162" width="100" height="4" rx="2" fill="#e0a055" opacity="0.6"/>
           <rect x="108" y="172" width="80" height="4" rx="2" fill="#fdf3e3" opacity="0.35"/>
@@ -126,9 +126,9 @@ title: About — Cookie Digital
           <rect x="162" y="212" width="2" height="10" rx="1" fill="#e0a055" opacity="0.9"/>
           <rect x="80" y="238" width="220" height="8" rx="3" fill="#2e1c0e" opacity="0.6"/>
           <rect x="90" y="244" width="200" height="10" rx="4" fill="#2e1c0e" opacity="0.5"/>
-          <rect x="168" y="250" width="44" height="28" rx="4" fill="#0a0a0a" opacity="0.5"/>
+          <rect x="168" y="250" width="44" height="28" rx="4" fill="#1a0f06" opacity="0.5"/>
           <rect x="310" y="200" width="36" height="42" rx="6" fill="#c4793a" opacity="0.6"/>
-          <rect x="314" y="204" width="28" height="12" rx="2" fill="#8B5E3C" opacity="0.3"/>
+          <rect x="314" y="204" width="28" height="12" rx="2" fill="#e0a055" opacity="0.35"/>
           <path d="M346 218 Q358 218 358 228 Q358 238 346 238" stroke="#c4793a" stroke-width="3" opacity="0.5" fill="none"/>
           <path d="M322 196 Q318 188 322 182 Q326 176 322 170" stroke="#fdf3e3" stroke-width="2" opacity="0.25" stroke-linecap="round" fill="none"/>
           <path d="M330 194 Q326 186 330 180 Q334 174 330 168" stroke="#fdf3e3" stroke-width="2" opacity="0.2" stroke-linecap="round" fill="none"/>
@@ -139,13 +139,13 @@ title: About — Cookie Digital
           <ellipse cx="52" cy="239" rx="4" ry="3.5" fill="#2e1c0e" opacity="0.58" transform="rotate(-5 52 239)"/>
           <ellipse cx="65" cy="240" rx="3.5" ry="3" fill="#2e1c0e" opacity="0.5" transform="rotate(8 65 240)"/>
           <rect x="32" y="165" width="28" height="50" rx="5" fill="#2e1c0e" opacity="0.7"/>
-          <rect x="35" y="170" width="22" height="36" rx="2" fill="#0a0a0a"/>
+          <rect x="35" y="170" width="22" height="36" rx="2" fill="#1a0f06"/>
           <rect x="38" y="174" width="16" height="3" rx="1" fill="#c4793a" opacity="0.6"/>
           <rect x="38" y="180" width="12" height="2" rx="1" fill="#e0a055" opacity="0.4"/>
-          <rect x="38" y="185" width="14" height="2" rx="1" fill="#ffffff" opacity="0.08"/>
+          <rect x="38" y="185" width="14" height="2" rx="1" fill="#fdf3e3" opacity="0.25"/>
           <circle cx="280" cy="120" r="5" fill="#e0a055" opacity="0.45"/>
           <circle cx="140" cy="100" r="4" fill="#c4793a" opacity="0.4"/>
-          <circle cx="350" cy="170" r="3" fill="#8B5E3C" opacity="0.3"/>
+          <circle cx="350" cy="170" r="3" fill="#e0a055" opacity="0.35"/>
           <circle cx="30" cy="130" r="4" fill="#c4793a" opacity="0.38"/>
           <circle cx="190" cy="170" r="155" stroke="#c4793a" stroke-width="1.5" opacity="0.12"/>
           <circle cx="190" cy="170" r="175" stroke="#e0a055" stroke-width="1" opacity="0.08"/>
@@ -165,10 +165,10 @@ title: About — Cookie Digital
   </div>
 
   <!-- VALUES -->
-  <section class="values section" style="overflow:hidden;background:#0a0a0a;">
+  <section class="values section" style="overflow:hidden;">
     <svg style="position:absolute;bottom:-60px;left:-60px;width:420px;pointer-events:none;z-index:0;" viewBox="0 0 420 420" fill="none">
-      <circle cx="0" cy="420" r="260" stroke="#ffffff" stroke-width="1" opacity="0.05"/>
-      <circle cx="0" cy="420" r="190" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="0" cy="420" r="260" stroke="#c4793a" stroke-width="2" opacity="0.16"/>
+      <circle cx="0" cy="420" r="190" stroke="#c4793a" stroke-width="2" opacity="0.13"/>
       <circle cx="0" cy="420" r="120" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
       <circle cx="0" cy="420" r="55" stroke="#8B5E3C" stroke-width="2" opacity="0.2"/>
     </svg>
@@ -188,21 +188,21 @@ title: About — Cookie Digital
 
   <section class="cta-band" style="position:relative;overflow:hidden;">
     <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
-      <circle cx="80" cy="250" r="270" stroke="#fdf3e3" stroke-width="1.5" opacity="0.09"/>
-      <circle cx="80" cy="250" r="190" stroke="#fdf3e3" stroke-width="2" opacity="0.11"/>
-      <circle cx="80" cy="250" r="110" stroke="#fdf3e3" stroke-width="2.5" opacity="0.14"/>
+      <circle cx="80" cy="250" r="270" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="80" cy="250" r="190" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="80" cy="250" r="110" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
     </svg>
     <div class="container cta-band__inner" style="position:relative;z-index:1;">
       <h2>Want to work together?</h2>
       <p>I'd love to hear about your project — even if you're not sure what you need yet.</p>
-      <a href="/contact/" class="btn btn--ghost" style="border-color:rgba(10,10,10,0.3);color:#0a0a0a;">Get in Touch →</a>
+      <a href="/contact/" class="btn btn--primary" style="background:#0a0a0a;color:#ffffff;border:1.5px solid rgba(255,255,255,0.2);">Get in Touch →</a>
     </div>
   </section>
 
   <footer class="footer" style="position:relative;overflow:hidden;">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="/" class="nav__logo">🍪 Cookie Digital</a>
+        <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
         <p>Serving NY, NJ & CT — and beyond.</p>
       </div>
       <div class="footer__links">
