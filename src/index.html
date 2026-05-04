@@ -14,9 +14,39 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
     .section { padding: 80px 0; }
-    .hero--simple { min-height: 92vh; display: flex; align-items: center; background: #0a0a0a; overflow: visible !important; padding-bottom: 160px !important; }
-    .hero__headline { overflow: visible !important; padding-bottom: 0.5em !important; line-height: 1.5 !important; }
-    .hero__headline em { display: block !important; overflow: visible !important; padding-bottom: 0.35em !important; line-height: 1.6 !important; }
+    .hero--simple { min-height: 100vh; display: flex; align-items: center; background: #0a0a0a; overflow: visible !important; padding: 120px 0 80px; }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero__headline { overflow: visible !important; padding-bottom: 0.3em !important; line-height: 1.35 !important; font-size: clamp(2.4rem, 4.5vw, 4rem) !important; }
+    .hero__headline em { display: block !important; overflow: visible !important; padding-bottom: 0.2em !important; line-height: 1.4 !important; }
+    .hero__visual { display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,94,60,0.15); border: 1px solid rgba(139,94,60,0.3); color: #a8724e; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
+    .hero__sub { color: #aaaaaa; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-card { background: #141414; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; width: 100%; max-width: 420px; position: relative; overflow: hidden; }
+    .hero-card::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 240px 240px; opacity: 0.4; pointer-events: none; }
+    .hero-card__top { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    .hero-card__dot { width: 10px; height: 10px; border-radius: 50%; }
+    .hero-card__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-left: auto; }
+    .hero-card__title { font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 1.25rem; font-weight: 400; position: relative; z-index: 1; }
+    .hero-card__bars { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    .hero-card__bar-row { display: flex; align-items: center; gap: 0.75rem; }
+    .hero-card__bar-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); width: 80px; flex-shrink: 0; }
+    .hero-card__bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
+    .hero-card__bar-fill { height: 100%; border-radius: 999px; background: #8B5E3C; }
+    .hero-card__bar-val { font-size: 0.72rem; font-weight: 700; color: #8B5E3C; width: 32px; text-align: right; flex-shrink: 0; }
+    .hero-card__divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1.25rem; position: relative; z-index: 1; }
+    .hero-card__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; position: relative; z-index: 1; }
+    .hero-card__stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: #ffffff; line-height: 1; }
+    .hero-card__stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+    .hero-card__tag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(139,94,60,0.15); border: 1px solid rgba(139,94,60,0.25); border-radius: 8px; padding: 0.5rem 0.75rem; }
+    .hero-card__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: #8B5E3C; }
+    .hero-card__tag-text { font-size: 0.72rem; font-weight: 600; color: #a8724e; }
+    .hero-mini-card { position: absolute; background: #1e1e1e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.75rem 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 10; }
+    .hero-mini-card--tl { top: -16px; left: -16px; }
+    .hero-mini-card--br { bottom: -16px; right: -16px; }
+    .hero-mini-label { font-size: 0.62rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; font-family: var(--font-body); }
+    .hero-mini-val { font-size: 0.9rem; font-weight: 700; color: #ffffff; font-family: var(--font-body); }
+    @media (max-width: 900px) { .hero__inner { grid-template-columns: 1fr; } .hero__visual { display: none; } }
     .cookie-float { position: absolute; pointer-events: none; z-index: 2; }
     @keyframes cookieSpin { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-22px) rotate(8deg)} }
     @keyframes cookieSpin2 { 0%,100%{transform:translateY(0) rotate(12deg)} 50%{transform:translateY(-16px) rotate(-6deg)} }
@@ -36,7 +66,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     .zigzag__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative; z-index: 1; }
     .zigzag__text { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
     .zigzag__visual { display: flex; align-items: center; justify-content: center; padding: 60px; position: relative; }
-    .testimonial-band { background: #111111; padding: 80px 0; position: relative; overflow: hidden; }
+    .testimonial-band { background: var(--brown); padding: 80px 0; position: relative; overflow: hidden; }
     .testimonial-band::before { content: ''; position: absolute; inset: 0; background-image: var(--grain); background-size: 280px 280px; opacity: 0.06; }
     .testimonial-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .testimonial-quote { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; color: #ffffff; line-height: 1.5; margin-bottom: 1.5rem; }
@@ -104,7 +134,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
       <circle cx="500" cy="200" r="32" fill="#8B5E3C" opacity="0.25"/>
     </svg>
     <svg style="position:absolute;bottom:40px;left:20px;width:220px;height:220px;pointer-events:none;z-index:0;" viewBox="0 0 220 220" fill="none">
-      <g fill="#8B5E3C" opacity="0.25">
+      <g fill="#8B5E3C">
         <circle cx="14" cy="14" r="4" opacity="0.4"/><circle cx="50" cy="14" r="4" opacity="0.34"/><circle cx="86" cy="14" r="4" opacity="0.28"/><circle cx="122" cy="14" r="4" opacity="0.22"/>
         <circle cx="14" cy="50" r="4" opacity="0.34"/><circle cx="50" cy="50" r="4" opacity="0.4"/><circle cx="86" cy="50" r="4" opacity="0.32"/><circle cx="122" cy="50" r="4" opacity="0.26"/>
         <circle cx="14" cy="86" r="4" opacity="0.28"/><circle cx="50" cy="86" r="4" opacity="0.32"/><circle cx="86" cy="86" r="4" opacity="0.38"/><circle cx="122" cy="86" r="4" opacity="0.3"/>
@@ -113,13 +143,74 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
       </g>
     </svg>
     <div class="container" style="position:relative;z-index:1;">
-      <div class="hero__content animate-in" style="--delay:0.1s">
-        <div class="hero__badge">{{ home.hero_badge }}</div>
-        <h1 class="hero__headline">{{ home.hero_line1 }}<br /><em>{{ home.hero_line2 }}</em></h1>
-        <p class="hero__sub">{{ home.hero_sub }}</p>
-        <div class="hero__actions">
-          <a href="/contact/" class="btn btn--primary">Let's Talk →</a>
-          <a href="/pricing/" class="btn btn--ghost">See Pricing</a>
+      <div class="hero__inner">
+        <!-- LEFT: text -->
+        <div class="hero__content animate-in" style="--delay:0.1s">
+          <div class="hero__badge">{{ home.hero_badge }}</div>
+          <h1 class="hero__headline">{{ home.hero_line1 }}<br /><em>{{ home.hero_line2 }}</em></h1>
+          <p class="hero__sub">{{ home.hero_sub }}</p>
+          <div class="hero__actions">
+            <a href="/contact/" class="btn btn--primary">Let's Talk →</a>
+            <a href="/pricing/" class="btn btn--ghost">See Pricing</a>
+          </div>
+        </div>
+        <!-- RIGHT: dashboard card visual -->
+        <div class="hero__visual animate-in" style="--delay:0.3s">
+          <div style="position:relative;width:100%;max-width:420px;">
+            <!-- floating mini card top-left -->
+            <div class="hero-mini-card hero-mini-card--tl">
+              <div class="hero-mini-label">Response time</div>
+              <div class="hero-mini-val">⚡ Under 48hrs</div>
+            </div>
+            <!-- main card -->
+            <div class="hero-card">
+              <div class="hero-card__top">
+                <div class="hero-card__dot" style="background:#8B5E3C;"></div>
+                <div class="hero-card__dot" style="background:rgba(255,255,255,0.2);"></div>
+                <div class="hero-card__dot" style="background:rgba(255,255,255,0.1);"></div>
+                <div class="hero-card__label">cookiedigital.co</div>
+              </div>
+              <div class="hero-card__title">Your new website — built right.</div>
+              <div class="hero-card__bars">
+                <div class="hero-card__bar-row">
+                  <div class="hero-card__bar-label">Performance</div>
+                  <div class="hero-card__bar-track"><div class="hero-card__bar-fill" style="width:96%;"></div></div>
+                  <div class="hero-card__bar-val">96</div>
+                </div>
+                <div class="hero-card__bar-row">
+                  <div class="hero-card__bar-label">SEO</div>
+                  <div class="hero-card__bar-track"><div class="hero-card__bar-fill" style="width:100%;"></div></div>
+                  <div class="hero-card__bar-val">100</div>
+                </div>
+                <div class="hero-card__bar-row">
+                  <div class="hero-card__bar-label">Accessibility</div>
+                  <div class="hero-card__bar-track"><div class="hero-card__bar-fill" style="width:92%;"></div></div>
+                  <div class="hero-card__bar-val">92</div>
+                </div>
+                <div class="hero-card__bar-row">
+                  <div class="hero-card__bar-label">Best Practices</div>
+                  <div class="hero-card__bar-track"><div class="hero-card__bar-fill" style="width:100%;"></div></div>
+                  <div class="hero-card__bar-val">100</div>
+                </div>
+              </div>
+              <div class="hero-card__divider"></div>
+              <div class="hero-card__stats">
+                <div>
+                  <div class="hero-card__stat-num">$450</div>
+                  <div class="hero-card__stat-label">Starting price</div>
+                </div>
+                <div>
+                  <div class="hero-card__stat-num">2wk</div>
+                  <div class="hero-card__stat-label">Avg. delivery</div>
+                </div>
+              </div>
+            </div>
+            <!-- floating mini card bottom-right -->
+            <div class="hero-mini-card hero-mini-card--br">
+              <div class="hero-mini-label">Status</div>
+              <div class="hero-mini-val" style="color:#8B5E3C;">✓ Site live</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -127,6 +218,14 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
 
   <!-- STATS -->
   <div class="stats-row">
+    <svg style="position:absolute;right:60px;top:50%;transform:translateY(-50%);width:120px;opacity:0.15;pointer-events:none;" viewBox="0 0 120 120" fill="none">
+      <circle cx="60" cy="60" r="54" stroke="#fdf3e3" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="40" stroke="#fdf3e3" stroke-width="1.2" stroke-dasharray="6 5"/>
+      <ellipse cx="43" cy="42" rx="7" ry="6" fill="#fdf3e3" transform="rotate(-12 43 42)"/>
+      <ellipse cx="75" cy="47" rx="6" ry="7" fill="#fdf3e3" transform="rotate(8 75 47)"/>
+      <ellipse cx="46" cy="74" rx="7" ry="6" fill="#fdf3e3" transform="rotate(-5 46 74)"/>
+      <ellipse cx="75" cy="76" rx="6" ry="5" fill="#fdf3e3" transform="rotate(10 75 76)"/>
+    </svg>
     <div class="container stats-row__inner">
       <div class="stat-item"><div class="stat-item__num">100%</div><div class="stat-item__label">Built from scratch</div></div>
       <div class="stat-item"><div class="stat-item__num">48hr</div><div class="stat-item__label">Avg. response time</div></div>
@@ -220,10 +319,10 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <!-- PRICING TEASER -->
   <section class="pricing-teaser section" style="position:relative;overflow:hidden;">
     <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;z-index:0;" viewBox="0 0 1200 180" preserveAspectRatio="none" fill="none">
-      <path d="M0 60 Q150 20 300 60 Q450 100 600 60 Q750 20 900 60 Q1050 100 1200 60" stroke="#ffffff" stroke-width="1.5" opacity="0.08"/>
+      <path d="M0 60 Q150 20 300 60 Q450 100 600 60 Q750 20 900 60 Q1050 100 1200 60" stroke="#c4793a" stroke-width="2.5" opacity="0.22"/>
       <path d="M0 90 Q150 50 300 90 Q450 130 600 90 Q750 50 900 90 Q1050 130 1200 90" stroke="#c4793a" stroke-width="2" opacity="0.17"/>
-      <path d="M0 120 Q150 80 300 120 Q450 160 600 120 Q750 80 900 120 Q1050 160 1200 120" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
-      <path d="M0 150 Q150 120 300 150 Q450 180 600 150 Q750 120 900 150 Q1050 180 1200 150" stroke="#8B5E3C" stroke-width="1" opacity="0.1"/>
+      <path d="M0 120 Q150 80 300 120 Q450 160 600 120 Q750 80 900 120 Q1050 160 1200 120" stroke="#e0a055" stroke-width="1.8" opacity="0.2"/>
+      <path d="M0 150 Q150 120 300 150 Q450 180 600 150 Q750 120 900 150 Q1050 180 1200 150" stroke="#e0a055" stroke-width="1.2" opacity="0.14"/>
     </svg>
     <div class="container pricing-teaser__inner" style="position:relative;z-index:1;">
       <div>
@@ -278,33 +377,18 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
     </div>
   </section>
 
-
-  <!-- FEATURE STRIP — fills space after removing testimonial -->
-  <div style="background:#111111;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:60px 0;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:var(--grain);background-size:280px 280px;opacity:0.45;pointer-events:none;"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;">
-        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
-          <div style="font-size:1.6rem;margin-bottom:0.75rem;">⚡</div>
-          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">2–4 week delivery</div>
-          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">No months of waiting. Most sites are live in under a month.</p>
-        </div>
-        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
-          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🎯</div>
-          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">Built for results</div>
-          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">Every decision is made to help your business, not just look good.</p>
-        </div>
-        <div style="padding:32px 28px;border-right:1px solid rgba(255,255,255,0.07);">
-          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🔒</div>
-          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">No surprise fees</div>
-          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">Flat-rate pricing. You know exactly what you're paying before we start.</p>
-        </div>
-        <div style="padding:32px 28px;">
-          <div style="font-size:1.6rem;margin-bottom:0.75rem;">🤝</div>
-          <div style="font-size:0.85rem;font-weight:700;color:#ffffff;margin-bottom:0.4rem;font-family:var(--font-body);">Work with me directly</div>
-          <p style="font-size:0.82rem;color:#aaaaaa;line-height:1.6;margin:0;">No middlemen. You talk to me start to finish, every time.</p>
-        </div>
-      </div>
+  <!-- TESTIMONIAL -->
+  <div class="testimonial-band">
+    <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
+      <circle cx="80" cy="250" r="280" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+      <circle cx="80" cy="250" r="200" stroke="#fdf3e3" stroke-width="1.5" opacity="0.07"/>
+      <circle cx="80" cy="250" r="120" stroke="#fdf3e3" stroke-width="2" opacity="0.1"/>
+      <circle cx="80" cy="250" r="50" stroke="#8B5E3C" stroke-width="1.5" opacity="0.15"/>
+    </svg>
+    <div class="container testimonial-inner">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Working with Cookie Digital was the easiest thing about launching my business. The site looks incredible and I had zero stress throughout."</p>
+      <div class="testimonial-attr">— A Happy Client · NYC Small Business Owner</div>
     </div>
   </div>
 
@@ -331,7 +415,7 @@ title: Cookie Digital — Web Design & Development · NY Tri-State Area
   <!-- FOOTER -->
   <footer class="footer" style="position:relative;overflow:hidden;">
     <svg style="position:absolute;bottom:40px;right:40px;width:220px;height:160px;pointer-events:none;" viewBox="0 0 220 160" fill="none">
-      <g fill="#8B5E3C" opacity="0.25">
+      <g fill="#8B5E3C">
         <circle cx="12" cy="12" r="3.5" opacity="0.24"/><circle cx="48" cy="12" r="3.5" opacity="0.2"/><circle cx="84" cy="12" r="3.5" opacity="0.17"/><circle cx="120" cy="12" r="3.5" opacity="0.14"/><circle cx="156" cy="12" r="3.5" opacity="0.11"/>
         <circle cx="12" cy="48" r="3.5" opacity="0.2"/><circle cx="48" cy="48" r="3.5" opacity="0.24"/><circle cx="84" cy="48" r="3.5" opacity="0.21"/><circle cx="120" cy="48" r="3.5" opacity="0.18"/><circle cx="156" cy="48" r="3.5" opacity="0.14"/>
         <circle cx="12" cy="84" r="3.5" opacity="0.17"/><circle cx="48" cy="84" r="3.5" opacity="0.21"/><circle cx="84" cy="84" r="3.5" opacity="0.24"/><circle cx="120" cy="84" r="3.5" opacity="0.2"/><circle cx="156" cy="84" r="3.5" opacity="0.16"/>
