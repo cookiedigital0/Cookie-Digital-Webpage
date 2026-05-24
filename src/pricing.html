@@ -1,0 +1,225 @@
+---
+title: Pricing — Cookie Digital
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="Simple, transparent pricing. Starter at $450, Premium at $750." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-18px) rotate(6deg)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(10deg)} 50%{transform:translateY(-14px) rotate(-6deg)} }
+    .cf1{animation:floatA 6s ease-in-out infinite}
+    .cf2{animation:floatB 5s ease-in-out infinite}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
+    <ul class="nav__links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/pricing/" class="nav__active">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/" class="nav__cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="/#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="/pricing/" onclick="closeMenu()">Pricing</a></li>
+      <li><a href="/about/" onclick="closeMenu()">About</a></li>
+      <li><a href="/contact/">Get in Touch</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero" style="overflow:hidden;background:#f0ede8;">
+    <svg style="position:absolute;top:-80px;right:-80px;width:520px;pointer-events:none;z-index:0;" viewBox="0 0 520 520" fill="none">
+      <circle cx="420" cy="150" r="300" stroke="#000000" stroke-width="1" opacity="0.06"/>
+      <circle cx="420" cy="150" r="220" stroke="#000000" stroke-width="1" opacity="0.05"/>
+      <circle cx="420" cy="150" r="140" stroke="#4A8FD4" stroke-width="1.5" opacity="0.2"/>
+      <circle cx="420" cy="150" r="65" stroke="#4A8FD4" stroke-width="2" opacity="0.25"/>
+      <circle cx="420" cy="150" r="24" fill="#4A8FD4" opacity="0.25"/>
+    </svg>
+    <svg style="position:absolute;top:40px;left:30px;width:120px;height:120px;pointer-events:none;z-index:0;" viewBox="0 0 120 120" fill="none">
+      <g stroke="#4A8FD4" stroke-width="1" opacity="0.2">
+        <line x1="10" y1="10" x2="10" y2="30"/><line x1="0" y1="20" x2="20" y2="20"/>
+        <line x1="50" y1="10" x2="50" y2="30"/><line x1="40" y1="20" x2="60" y2="20"/>
+        <line x1="90" y1="10" x2="90" y2="30"/><line x1="80" y1="20" x2="100" y2="20"/>
+        <line x1="10" y1="60" x2="10" y2="80"/><line x1="0" y1="70" x2="20" y2="70"/>
+        <line x1="50" y1="60" x2="50" y2="80"/><line x1="40" y1="70" x2="60" y2="70"/>
+        <line x1="90" y1="60" x2="90" y2="80"/><line x1="80" y1="70" x2="100" y2="70"/>
+        <line x1="10" y1="100" x2="10" y2="120"/><line x1="0" y1="110" x2="20" y2="110"/>
+        <line x1="50" y1="100" x2="50" y2="120"/><line x1="40" y1="110" x2="60" y2="110"/>
+      </g>
+    </svg>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label animate-in" style="--delay:0.05s">Pricing</p>
+      <h1 class="animate-in" style="--delay:0.15s">{{ pricing.hero_headline }}</h1>
+      <p class="page-hero__sub animate-in" style="--delay:0.25s">{{ pricing.hero_sub }}</p>
+    </div>
+  </section>
+
+  <!-- WHY STRIP -->
+  <div style="background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.06);padding:28px 0;">
+    <div class="container" style="display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;align-items:center;">
+      <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:600;color:#1a1a1a;">
+        <span style="color:#4A8FD4;font-size:1rem;">✓</span> Flat-rate pricing, no surprises
+      </div>
+      <div style="width:1px;height:18px;background:rgba(0,0,0,0.1);"></div>
+      <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:600;color:#1a1a1a;">
+        <span style="color:#4A8FD4;font-size:1rem;">✓</span> 50% upfront, 50% on completion
+      </div>
+      <div style="width:1px;height:18px;background:rgba(0,0,0,0.1);"></div>
+      <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:600;color:#1a1a1a;">
+        <span style="color:#4A8FD4;font-size:1rem;">✓</span> You own everything when we're done
+      </div>
+      <div style="width:1px;height:18px;background:rgba(0,0,0,0.1);"></div>
+      <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:600;color:#1a1a1a;">
+        <span style="color:#4A8FD4;font-size:1rem;">✓</span> Direct communication, always
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee" aria-hidden="true">
+      <span>Starter ${{ pricing.starter_price }}</span><span class="dot">✦</span><span>Premium ${{ pricing.premium_price }}</span><span class="dot">✦</span><span>No Hidden Fees</span><span class="dot">✦</span><span>NY · NJ · CT</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>Starter ${{ pricing.starter_price }}</span><span class="dot">✦</span><span>Premium ${{ pricing.premium_price }}</span><span class="dot">✦</span><span>No Hidden Fees</span><span class="dot">✦</span><span>NY · NJ · CT</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>Starter ${{ pricing.starter_price }}</span><span class="dot">✦</span><span>Premium ${{ pricing.premium_price }}</span><span class="dot">✦</span><span>No Hidden Fees</span><span class="dot">✦</span><span>NY · NJ · CT</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+      <span>Starter ${{ pricing.starter_price }}</span><span class="dot">✦</span><span>Premium ${{ pricing.premium_price }}</span><span class="dot">✦</span><span>No Hidden Fees</span><span class="dot">✦</span><span>NY · NJ · CT</span><span class="dot">✦</span><span>Fast Turnarounds</span><span class="dot">✦</span><span>Real Results</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <section class="plans section" style="background:#f8f6f3;position:relative;overflow:hidden;">
+    <svg style="position:absolute;top:0;right:0;width:300px;pointer-events:none;z-index:0;" viewBox="0 0 300 300" fill="none">
+      <g stroke="#000000" stroke-width="1" opacity="0.07">
+        <line x1="0" y1="50" x2="50" y2="0"/><line x1="0" y1="100" x2="100" y2="0"/>
+        <line x1="0" y1="150" x2="150" y2="0"/><line x1="0" y1="200" x2="200" y2="0"/>
+        <line x1="0" y1="250" x2="250" y2="0"/><line x1="50" y1="300" x2="300" y2="50"/>
+        <line x1="100" y1="300" x2="300" y2="100"/><line x1="150" y1="300" x2="300" y2="150"/>
+        <line x1="200" y1="300" x2="300" y2="200"/><line x1="250" y1="300" x2="300" y2="250"/>
+      </g>
+    </svg>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="plans__grid">
+        <div class="plan-card">
+          <div class="plan-card__header">
+            <div class="plan-card__name">Starter</div>
+            <div class="plan-card__price"><span class="plan-card__dollar">$</span>{{ pricing.starter_price }}</div>
+            <p class="plan-card__tagline">{{ pricing.starter_tagline }}</p>
+          </div>
+          <div class="plan-card__features">
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Up to 5 pages</strong><p>Home, About, Services, Contact + one more.</p></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Mobile-friendly design</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Contact form</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Basic SEO setup</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>2 rounds of revisions</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>1 week post-launch fixes</strong></div></div>
+            <div class="plan-feature plan-feature--muted"><span class="plan-x">✕</span><div><strong>Custom animations</strong></div></div>
+            <div class="plan-feature plan-feature--muted"><span class="plan-x">✕</span><div><strong>E-commerce</strong></div></div>
+            <div class="plan-feature plan-feature--muted"><span class="plan-x">✕</span><div><strong>Blog or CMS setup</strong></div></div>
+          </div>
+          <div class="plan-card__footer">
+            <a href="/contact/?plan=starter" class="btn btn--ghost btn--full">Get Started →</a>
+            <p class="plan-note">~2 week turnaround</p>
+          </div>
+        </div>
+        <div class="plan-card plan-card--featured" style="background:#eef4fc!important;border-color:#4A8FD4!important;color:#1a1a1a!important;">
+          <div class="plan-card__badge">Most Popular</div>
+          <div class="plan-card__header">
+            <div class="plan-card__name">Premium</div>
+            <div class="plan-card__price"><span class="plan-card__dollar">$</span>{{ pricing.premium_price }}</div>
+            <p class="plan-card__tagline">{{ pricing.premium_tagline }}</p>
+          </div>
+          <div class="plan-card__features">
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Up to 10 pages</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Fully custom design</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Full SEO setup</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Custom animations</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Blog or CMS setup</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>E-commerce ready</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>Unlimited revisions (during build)</strong></div></div>
+            <div class="plan-feature"><span class="plan-check">✓</span><div><strong>30 days post-launch support</strong></div></div>
+          </div>
+          <div class="plan-card__footer">
+            <a href="/contact/?plan=premium" class="btn btn--primary btn--full">Get Started →</a>
+            <p class="plan-note">~3–4 week turnaround</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="addons">
+        <h3>Need something extra?</h3>
+        <p>Add these to either plan — just mention it when you reach out.</p>
+        <div class="addons__grid">
+          <div class="addon-item"><strong>Extra pages</strong><span>{{ pricing.addon_pages }}</span></div>
+          <div class="addon-item"><strong>Monthly maintenance</strong><span>{{ pricing.addon_maintenance }}</span></div>
+          <div class="addon-item"><strong>Speed & SEO audit</strong><span>{{ pricing.addon_seo }}</span></div>
+          <div class="addon-item"><strong>Rush delivery (&lt;1 week)</strong><span>{{ pricing.addon_rush }}</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section" style="background:#f0ede8;position:relative;overflow:hidden;">
+    <svg style="position:absolute;bottom:-60px;right:-60px;width:420px;pointer-events:none;" viewBox="0 0 420 420" fill="none">
+      <circle cx="420" cy="420" r="260" stroke="#000000" stroke-width="1" opacity="0.05"/>
+      <circle cx="420" cy="420" r="190" stroke="#000000" stroke-width="1" opacity="0.04"/>
+      <circle cx="420" cy="420" r="120" stroke="#4A8FD4" stroke-width="1.5" opacity="0.15"/>
+      <circle cx="420" cy="420" r="55" stroke="#4A8FD4" stroke-width="2" opacity="0.2"/>
+    </svg>
+    <div style="position:absolute;inset:0;background-image:var(--grain);background-size:260px 260px;opacity:0.5;pointer-events:none;"></div>
+    <div class="container faq__inner" style="position:relative;z-index:1;">
+      <div>
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title" style="color:#1a1a1a;">Quick answers.</h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq-item"><h4 style="color:#1a1a1a;">How do I pay?</h4><p>I ask for 50% upfront and the other 50% when we're done. PayPal, Venmo, Zelle, or bank transfer all work.</p></div>
+        <div class="faq-item"><h4 style="color:#1a1a1a;">Do you work outside the tri-state area?</h4><p>Primarily NY, NJ, and CT — but I'm open to working with anyone. Just reach out and we'll make it work.</p></div>
+        <div class="faq-item"><h4 style="color:#1a1a1a;">What if I need changes after launch?</h4><p>Starter gets 1 week of fixes. Premium gets 30 days. After that, my maintenance add-on keeps things covered.</p></div>
+        <div class="faq-item"><h4 style="color:#1a1a1a;">Do you do hosting?</h4><p>I don't sell hosting, but I'll help you pick the right host and get everything set up.</p></div>
+        <div class="faq-item"><h4 style="color:#1a1a1a;">Can I update the site myself?</h4><p>Yes — especially on the Premium plan with CMS setup. Update content without touching any code.</p></div>
+        <div class="faq-item"><h4 style="color:#1a1a1a;">Not sure which plan?</h4><p>Just reach out and describe what you're after. I'll tell you honestly which one makes sense.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="position:relative;overflow:hidden;">
+    <svg style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;pointer-events:none;" viewBox="0 0 500 500" fill="none">
+      <circle cx="80" cy="250" r="270" stroke="#000000" stroke-width="1" opacity="0.05"/>
+      <circle cx="80" cy="250" r="190" stroke="#000000" stroke-width="1" opacity="0.05"/>
+      <circle cx="80" cy="250" r="110" stroke="#4A8FD4" stroke-width="1.5" opacity="0.15"/>
+    </svg>
+    <div class="container cta-band__inner" style="position:relative;z-index:1;">
+      <h2>Ready to get started?</h2>
+      <p>Pick a plan, or just message me and we'll figure it out together.</p>
+      <a href="/contact/" class="btn btn--primary">Get in Touch →</a>
+    </div>
+  </section>
+
+  <footer class="footer" style="position:relative;overflow:hidden;">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo"><span class="logo-cookie">🍪</span> Cookie Digital</a>
+        <p>Serving NY, NJ & CT — and beyond.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col"><h4>Pages</h4><a href="/">Home</a><a href="/pricing/">Pricing</a><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+        <div class="footer__col"><h4>Services</h4><a href="#">Web Design</a><a href="#">Development</a><a href="#">E-commerce</a><a href="#">Maintenance</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>© 2026 Cookie Digital. All rights reserved.</p></div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
