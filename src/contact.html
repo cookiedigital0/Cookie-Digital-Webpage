@@ -56,14 +56,17 @@ title: Contact — Cookie Digital
 
   <!-- PHOTO STRIP -->
   <div style="height:220px;overflow:hidden;position:relative;">
-    <img
-      src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1800&q=95&auto=format&fit=crop"
-      alt="Getting in touch"
-      style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.8) brightness(1.05);"
-    />
-    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(240,237,232,0.3),rgba(240,237,232,0.1));pointer-events:none;"></div>
+    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=95&auto=format&fit=crop" alt="Code" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.75) brightness(0.95);"/>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(240,237,232,0.2),rgba(240,237,232,0.05));pointer-events:none;"></div>
   </div>
 
+  <!-- WAVE DIVIDER -->
+  <div style="background:#f0ede8;line-height:0;overflow:hidden;">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;">
+      <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30 L1440 60 L0 60 Z" fill="#4A8FD4" opacity="0.12"/>
+      <path d="M0 40 Q200 10 400 40 Q600 70 800 40 Q1000 10 1200 40 Q1320 55 1440 40 L1440 60 L0 60 Z" fill="#4A8FD4" opacity="0.07"/>
+    </svg>
+  </div>
   <div class="marquee-wrap">
     <div class="marquee" aria-hidden="true">
       <span>{{ contact.email }}</span><span class="dot">✦</span><span>{{ contact.response_time }}</span><span class="dot">✦</span><span>NY · NJ · CT</span><span class="dot">✦</span><span>No Sales Pitch</span><span class="dot">✦</span><span>Real Conversations</span><span class="dot">✦</span><span>Fair Prices</span><span class="dot">✦</span>
