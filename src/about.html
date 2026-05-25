@@ -112,42 +112,18 @@ title: About — Cookie Digital
         <p>{{ about.story_p3 }}</p>
       </div>
       <div class="about-photo-visual">
-        <!-- Geometric decoration -->
-        <svg style="width:min(340px,90%);height:auto;" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- outer ring -->
-          <circle cx="170" cy="170" r="155" stroke="#4A8FD4" stroke-width="1.5" opacity="0.25"/>
-          <!-- middle ring -->
-          <circle cx="170" cy="170" r="115" stroke="#ffffff" stroke-width="1" opacity="0.07"/>
-          <!-- inner ring -->
-          <circle cx="170" cy="170" r="75"  stroke="#4A8FD4" stroke-width="2" opacity="0.35"/>
-          <!-- center -->
-          <circle cx="170" cy="170" r="10"  fill="#4A8FD4" opacity="0.5"/>
-          <!-- crosshair -->
-          <line x1="170" y1="15"  x2="170" y2="55"  stroke="#4A8FD4" stroke-width="1.5" opacity="0.4"/>
-          <line x1="170" y1="285" x2="170" y2="325" stroke="#4A8FD4" stroke-width="1.5" opacity="0.4"/>
-          <line x1="15"  y1="170" x2="55"  y2="170" stroke="#4A8FD4" stroke-width="1.5" opacity="0.4"/>
-          <line x1="285" y1="170" x2="325" y2="170" stroke="#4A8FD4" stroke-width="1.5" opacity="0.4"/>
-          <!-- orbit dots -->
-          <circle cx="170" cy="55"  r="5" fill="#4A8FD4" opacity="0.5"/>
-          <circle cx="170" cy="285" r="5" fill="#4A8FD4" opacity="0.5"/>
-          <circle cx="55"  cy="170" r="5" fill="#4A8FD4" opacity="0.5"/>
-          <circle cx="285" cy="170" r="5" fill="#4A8FD4" opacity="0.5"/>
-          <!-- dashed arc -->
-          <path d="M 236 104 A 90 90 0 0 1 260 170" stroke="#4A8FD4" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.35" fill="none"/>
-          <path d="M 104 236 A 90 90 0 0 1 170 260" stroke="#4A8FD4" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.3" fill="none"/>
-          <!-- diamond -->
-          <rect x="150" y="150" width="40" height="40" rx="3" stroke="#4A8FD4" stroke-width="1.5" opacity="0.35" fill="rgba(139,94,60,0.05)" transform="rotate(45 170 170)"/>
-          <!-- accent dots -->
-          <circle cx="55"  cy="85"  r="4" fill="#ffffff" opacity="0.1"/>
-          <circle cx="285" cy="85"  r="4" fill="#ffffff" opacity="0.1"/>
-          <circle cx="55"  cy="255" r="4" fill="#ffffff" opacity="0.1"/>
-          <circle cx="285" cy="255" r="4" fill="#ffffff" opacity="0.1"/>
-          <!-- tick marks on outer ring -->
-          <line x1="108" y1="36"  x2="115" y2="44"  stroke="#ffffff" stroke-width="1" opacity="0.18"/>
-          <line x1="232" y1="36"  x2="225" y2="44"  stroke="#ffffff" stroke-width="1" opacity="0.18"/>
-          <line x1="108" y1="304" x2="115" y2="296" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
-          <line x1="232" y1="304" x2="225" y2="296" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
-        </svg>
+        <div style="position:relative;width:min(340px,90%);">
+          <img
+            src="https://picsum.photos/id/338/680/520"
+            alt="Developer at work"
+            style="width:100%;border-radius:20px;display:block;box-shadow:0 24px 60px rgba(0,0,0,0.25);filter:saturate(0.75) brightness(1.05);"
+            onerror="this.style.background='#1a2838';this.style.height='340px';this.style.borderRadius='20px';"
+          />
+          <div style="position:absolute;top:20px;left:-20px;background:#ffffff;border-radius:12px;padding:0.75rem 1rem;box-shadow:0 8px 24px rgba(0,0,0,0.15);">
+            <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.4);font-family:var(--font-body);">Based in</div>
+            <div style="font-size:0.88rem;font-weight:700;color:#1a1a1a;font-family:var(--font-body);">NY Tri-State Area</div>
+          </div>
+        </div>
         <svg class="dev-illustration" style="display:none;" viewBox="0 0 380 340" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="20" y="240" width="340" height="14" rx="4" fill="#c4793a" opacity="0.5"/>
           <rect x="40" y="254" width="300" height="60" rx="4" fill="#4A8FD4" opacity="0.15"/>
@@ -202,6 +178,20 @@ title: About — Cookie Digital
   </div>
 
   <!-- VALUES -->
+  <!-- PHOTO STRIP -->
+  <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;height:300px;overflow:hidden;">
+    <div style="overflow:hidden;position:relative;">
+      <img src="https://picsum.photos/id/0/900/500" alt="Working" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.8);"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(248,246,243,0.1),transparent);pointer-events:none;"></div>
+    </div>
+    <div style="overflow:hidden;">
+      <img src="https://picsum.photos/id/180/500/500" alt="Design" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.8);"/>
+    </div>
+    <div style="overflow:hidden;">
+      <img src="https://picsum.photos/id/119/500/500" alt="Code" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.8);"/>
+    </div>
+  </div>
+
   <section class="values section" style="overflow:hidden;background:#f8f6f3;">
     <svg style="position:absolute;bottom:-60px;left:-60px;width:420px;pointer-events:none;z-index:0;" viewBox="0 0 420 420" fill="none">
       <circle cx="0" cy="420" r="260" stroke="#000000" stroke-width="1" opacity="0.05"/>
