@@ -35,7 +35,6 @@ title: About — Cookie Digital
     .about-photo-text p { color:rgba(255,255,255,0.65); margin-bottom:1rem; font-size:0.97rem; }
     .about-photo-visual { display:flex; align-items:center; justify-content:center; position:relative; }
     .dev-illustration { width: min(380px, 90%); height: auto; }
-    .page-hero__sub { background: none !important; -webkit-text-fill-color: inherit !important; color: #666666 !important; }
     @media(max-width:900px){
       .about-photo-inner { grid-template-columns:1fr; gap:2.5rem; }
       .about-feature-grid { grid-template-columns:1fr; }
@@ -88,7 +87,7 @@ title: About — Cookie Digital
     <div class="container" style="position:relative;z-index:1;">
       <p class="section-label animate-in" style="--delay:0.05s">About Me</p>
       <h1 class="animate-in" style="--delay:0.15s;color:#1a1a1a;">{{ about.hero_headline }}</h1>
-      <p class="page-hero__sub animate-in" style="--delay:0.25s;background:none;color:#666666;">{{ about.hero_sub }}</p>
+      <p style="font-size:1.07rem;color:#666666;max-width:540px;line-height:1.82;margin-top:0.5rem;background:transparent;background-image:none;-webkit-text-fill-color:#666666;">{{ about.hero_sub }}</p>
     </div>
   </section>
 
