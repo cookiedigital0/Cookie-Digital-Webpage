@@ -216,66 +216,32 @@ title: Cookie Digital Web Design & Development · NY Tri-State Area
         <!-- RIGHT: dashboard card visual -->
         <div class="hero__visual animate-in" style="--delay:0.3s">
           <style>
-            .slideshow { position:relative; width:100%; max-width:460px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.14); aspect-ratio:4/3; }
+            .slideshow { position:relative; width:100%; max-width:520px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.14); aspect-ratio:3/4; }
             .slide { position:absolute; inset:0; opacity:0; transition:opacity 0.8s ease-in-out; }
             .slide img { width:100%; height:100%; object-fit:cover; display:block; }
             .slide.active { opacity:1; }
-            .slide-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(0,0,0,0.65),transparent); padding:1.5rem 1.25rem 1rem; }
-            .slide-caption-text { font-size:0.78rem; font-weight:600; color:#fff; letter-spacing:0.04em; }
-            .slide-caption-sub { font-size:0.68rem; color:rgba(255,255,255,0.65); margin-top:2px; }
-            .slide-dots { position:absolute; bottom:12px; right:14px; display:flex; gap:5px; z-index:10; }
+            .slide-dots { position:absolute; bottom:14px; right:16px; display:flex; gap:5px; z-index:10; }
             .slide-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background 0.3s; }
             .slide-dot.active { background:#fff; }
-            .slide-badge { position:absolute; top:14px; left:14px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-radius:8px; padding:6px 10px; box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:10; }
-            .slide-badge-label { font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(0,0,0,0.4); font-family:var(--font-body); }
-            .slide-badge-val { font-size:0.8rem; font-weight:700; color:#4A8FD4; font-family:var(--font-body); }
           </style>
           <div class="slideshow" id="heroSlideshow">
-            <div class="slide-badge">
-              <div class="slide-badge-label">Your clients</div>
-              <div class="slide-badge-val">Could look like this ✓</div>
-            </div>
             <div class="slide active">
               <img src="/images/slide1.jpg" alt="Coffee shop" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">☕ Local Coffee Shop</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide">
               <img src="/images/slide2.jpg" alt="Grocery store" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">🛒 Local Grocery Store</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide">
               <img src="/images/slide3.jpg" alt="Carpenter" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">🔨 Local Contractor</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide">
               <img src="/images/slide4.jpg" alt="Salon" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">✂️ Local Salon</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide">
               <img src="/images/slide5.jpg" alt="Restaurant" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">🍽️ Local Restaurant</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide">
               <img src="/images/slide6.jpg" alt="Local business" loading="lazy"/>
-              <div class="slide-caption">
-                <div class="slide-caption-text">🏪 Shop Local</div>
-                <div class="slide-caption-sub">NY Tri-State Area</div>
-              </div>
             </div>
             <div class="slide-dots" id="slideDots">
               <div class="slide-dot active" onclick="goTo(0)"></div>
