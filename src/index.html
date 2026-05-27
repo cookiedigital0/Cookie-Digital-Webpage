@@ -216,129 +216,94 @@ title: Cookie Digital Web Design & Development · NY Tri-State Area
         <!-- RIGHT: dashboard card visual -->
         <div class="hero__visual animate-in" style="--delay:0.3s">
           <style>
-            @keyframes f1{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-22px) rotate(1.5deg)}}
-            @keyframes f2{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-16px) rotate(-1.5deg)}}
-            @keyframes f3{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-26px) rotate(1deg)}}
-            @keyframes f4{0%,100%{transform:translateY(0) rotate(1.5deg)}50%{transform:translateY(-18px) rotate(-2deg)}}
-            @keyframes f5{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-14px) rotate(1deg)}}
-            .mc{border-radius:14px;overflow:hidden;position:absolute;box-shadow:0 12px 40px rgba(0,0,0,0.15);}
+            .slideshow { position:relative; width:100%; max-width:460px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.14); aspect-ratio:4/3; }
+            .slide { position:absolute; inset:0; opacity:0; transition:opacity 0.8s ease-in-out; }
+            .slide img { width:100%; height:100%; object-fit:cover; display:block; }
+            .slide.active { opacity:1; }
+            .slide-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(0,0,0,0.65),transparent); padding:1.5rem 1.25rem 1rem; }
+            .slide-caption-text { font-size:0.78rem; font-weight:600; color:#fff; letter-spacing:0.04em; }
+            .slide-caption-sub { font-size:0.68rem; color:rgba(255,255,255,0.65); margin-top:2px; }
+            .slide-dots { position:absolute; bottom:12px; right:14px; display:flex; gap:5px; z-index:10; }
+            .slide-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background 0.3s; }
+            .slide-dot.active { background:#fff; }
+            .slide-badge { position:absolute; top:14px; left:14px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-radius:8px; padding:6px 10px; box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:10; }
+            .slide-badge-label { font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(0,0,0,0.4); font-family:var(--font-body); }
+            .slide-badge-val { font-size:0.8rem; font-weight:700; color:#4A8FD4; font-family:var(--font-body); }
           </style>
-          <div style="position:relative;width:100%;height:540px;">
-
-            <!-- Card 1 - Restaurant — top left, vivid red -->
-            <div class="mc" style="width:230px;top:10px;left:0;animation:f1 6s ease-in-out infinite;">
-              <div style="background:#111;padding:8px 12px;display:flex;align-items:center;gap:4px;">
-                <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
-                <div style="flex:1;background:rgba(255,255,255,0.1);border-radius:3px;height:11px;margin-left:6px;display:flex;align-items:center;padding:0 6px;"><span style="font-size:6px;color:rgba(255,255,255,0.4);">fratellosnyc.com</span></div>
-              </div>
-              <div style="background:linear-gradient(135deg,#c0392b,#922b21);padding:18px 14px 14px;">
-                <div style="font-size:7px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:0.15em;margin-bottom:5px;">EST. 1987 · LITTLE ITALY</div>
-                <div style="font-size:22px;font-weight:900;color:#fff;font-family:sans-serif;line-height:0.95;margin-bottom:2px;">REAL</div>
-                <div style="font-size:22px;font-weight:900;color:#f0c040;font-family:sans-serif;line-height:0.95;margin-bottom:10px;">ITALIAN.</div>
-                <div style="height:4px;background:rgba(255,255,255,0.15);border-radius:2px;width:75%;margin-bottom:4px;"></div>
-                <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;width:55%;"></div>
-              </div>
-              <div style="padding:10px 12px;background:#fff;">
-                <div style="display:flex;gap:4px;margin-bottom:8px;">
-                  <div style="font-size:7px;background:#fff5f5;color:#c0392b;border:1px solid #f5c6c6;border-radius:4px;padding:2px 6px;font-weight:600;">Menu</div>
-                  <div style="font-size:7px;background:#f8f8f8;color:#666;border:1px solid #eee;border-radius:4px;padding:2px 6px;">Reserve</div>
-                  <div style="font-size:7px;background:#f8f8f8;color:#666;border:1px solid #eee;border-radius:4px;padding:2px 6px;">About</div>
-                </div>
-                <div style="display:flex;gap:5px;">
-                  <div style="height:22px;flex:1;background:#c0392b;border-radius:5px;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#fff;font-weight:700;">Reserve →</span></div>
-                  <div style="height:22px;flex:1;background:#f8f8f8;border-radius:5px;border:1px solid #eee;"></div>
-                </div>
+          <div class="slideshow" id="heroSlideshow">
+            <div class="slide-badge">
+              <div class="slide-badge-label">Your clients</div>
+              <div class="slide-badge-val">Could look like this ✓</div>
+            </div>
+            <div class="slide active">
+              <img src="/images/slide1.jpg" alt="Coffee shop" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">☕ Local Coffee Shop</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
               </div>
             </div>
-
-            <!-- Card 2 - Salon — top right, blush luxury -->
-            <div class="mc" style="width:200px;top:0;right:0;animation:f2 7s ease-in-out infinite 1s;">
-              <div style="background:#0d0d0d;padding:7px 10px;display:flex;align-items:center;gap:4px;">
-                <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div>
-                <div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div>
-                <div style="width:7px;height:7px;border-radius:50%;background:#28c840;"></div>
-                <div style="margin-left:6px;font-size:8px;font-weight:300;color:#fff;letter-spacing:0.2em;">LUMIÈRE</div>
-              </div>
-              <div style="background:linear-gradient(160deg,#f2e8e0,#e8d5c8);padding:14px 12px;">
-                <div style="font-size:7px;color:#a0674a;letter-spacing:0.12em;margin-bottom:4px;">HAIR STUDIO · HOBOKEN NJ</div>
-                <div style="font-size:13px;font-weight:300;color:#1c1414;font-family:Georgia,serif;line-height:1.2;margin-bottom:8px;">Your hair,<br/><em style="color:#b5705a;">your story.</em></div>
-                <div style="display:flex;gap:4px;margin-bottom:6px;">
-                  <div style="font-size:6px;background:rgba(181,112,90,0.15);color:#b5705a;border-radius:999px;padding:2px 7px;border:1px solid rgba(181,112,90,0.3);">Cuts</div>
-                  <div style="font-size:6px;background:rgba(181,112,90,0.15);color:#b5705a;border-radius:999px;padding:2px 7px;border:1px solid rgba(181,112,90,0.3);">Color</div>
-                  <div style="font-size:6px;background:rgba(181,112,90,0.15);color:#b5705a;border-radius:999px;padding:2px 7px;border:1px solid rgba(181,112,90,0.3);">Keratin</div>
-                </div>
-                <div style="height:20px;background:#1c1414;border-radius:4px;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#fff;letter-spacing:0.1em;">BOOK NOW</span></div>
+            <div class="slide">
+              <img src="/images/slide2.jpg" alt="Grocery store" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">🛒 Local Grocery Store</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
               </div>
             </div>
-
-            <!-- Card 3 - Music shop — middle left, pulled down to avoid overlap -->
-            <div class="mc" style="width:210px;top:300px;left:5px;animation:f3 5.5s ease-in-out infinite 0.5s;">
-              <div style="background:#111;padding:7px 11px;display:flex;align-items:center;">
-                <span style="font-size:9px;font-weight:900;color:#e84c0d;letter-spacing:0.05em;">RIFFHOUSE</span>
-                <div style="margin-left:auto;display:flex;gap:3px;">
-                  <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div>
-                  <div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div>
-                </div>
-              </div>
-              <div style="background:#1a1a1a;padding:12px;">
-                <div style="font-size:7px;color:#e84c0d;letter-spacing:0.12em;margin-bottom:4px;font-weight:700;">⭐ STAFF PICKS</div>
-                <div style="font-size:13px;font-weight:900;color:#fff;margin-bottom:10px;line-height:1.1;">LEARN FROM<br/><span style="color:#e84c0d;">THE BEST.</span></div>
-                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:8px;">
-                  <div style="background:#252525;border-radius:6px;padding:6px 4px;text-align:center;">
-                    <div style="font-size:14px;margin-bottom:2px;">🎸</div>
-                    <div style="font-size:5px;color:#888;">$849</div>
-                  </div>
-                  <div style="background:#252525;border-radius:6px;padding:6px 4px;text-align:center;">
-                    <div style="font-size:14px;margin-bottom:2px;">🎹</div>
-                    <div style="font-size:5px;color:#888;">$1,299</div>
-                  </div>
-                  <div style="background:#252525;border-radius:6px;padding:6px 4px;text-align:center;">
-                    <div style="font-size:14px;margin-bottom:2px;">🥁</div>
-                    <div style="font-size:5px;color:#888;">$699</div>
-                  </div>
-                </div>
-                <div style="height:18px;background:#e84c0d;border-radius:4px;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#fff;font-weight:700;">Shop Now →</span></div>
+            <div class="slide">
+              <img src="/images/slide3.jpg" alt="Carpenter" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">🔨 Local Contractor</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
               </div>
             </div>
-
-            <!-- Card 4 - Contractor — bottom right, navy/yellow -->
-            <div class="mc" style="width:215px;bottom:10px;right:0;animation:f4 6.5s ease-in-out infinite 1.5s;">
-              <div style="background:#0d1b2a;padding:8px 11px;display:flex;align-items:center;gap:6px;">
-                <div style="width:18px;height:18px;background:#f5a623;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#0d1b2a;">A</div>
-                <span style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:#fff;">APEX BUILD</span>
-                <div style="margin-left:auto;background:#f5a623;border-radius:3px;padding:2px 7px;font-size:6px;font-weight:700;color:#0d1b2a;">FREE ESTIMATE</div>
-              </div>
-              <div style="background:linear-gradient(160deg,#0f2235,#0d1b2a);padding:14px 12px;">
-                <div style="font-size:7px;font-weight:700;color:#f5a623;letter-spacing:0.15em;margin-bottom:5px;">GENERAL CONTRACTOR</div>
-                <div style="font-size:20px;font-weight:900;color:#fff;line-height:0.95;margin-bottom:2px;">BUILT</div>
-                <div style="font-size:20px;font-weight:900;color:#f5a623;line-height:0.95;margin-bottom:10px;">RIGHT.</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px;">
-                  <div style="background:rgba(255,255,255,0.07);border-radius:5px;padding:5px 4px;text-align:center;">
-                    <div style="font-size:11px;font-weight:900;color:#fff;">18+</div>
-                    <div style="font-size:5px;color:rgba(255,255,255,0.4);text-transform:uppercase;">Years</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.07);border-radius:5px;padding:5px 4px;text-align:center;">
-                    <div style="font-size:11px;font-weight:900;color:#f5a623;">4.9★</div>
-                    <div style="font-size:5px;color:rgba(255,255,255,0.4);text-transform:uppercase;">Rating</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.07);border-radius:5px;padding:5px 4px;text-align:center;">
-                    <div style="font-size:11px;font-weight:900;color:#fff;">400+</div>
-                    <div style="font-size:5px;color:rgba(255,255,255,0.4);text-transform:uppercase;">Jobs</div>
-                  </div>
-                </div>
-                <div style="height:20px;background:#f5a623;border-radius:4px;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#0d1b2a;font-weight:900;">Get Free Estimate →</span></div>
+            <div class="slide">
+              <img src="/images/slide4.jpg" alt="Salon" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">✂️ Local Salon</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
               </div>
             </div>
-
-            <!-- Site live badge -->
-            <div style="position:absolute;top:200px;right:15px;background:#fff;border-radius:10px;padding:7px 11px;box-shadow:0 6px 20px rgba(0,0,0,0.12);animation:f5 4.5s ease-in-out infinite 2s;border-left:3px solid #28c840;">
-              <div style="font-size:6px;color:rgba(0,0,0,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Status</div>
-              <div style="font-size:0.78rem;font-weight:700;color:#28c840;">✓ Site live</div>
+            <div class="slide">
+              <img src="/images/slide5.jpg" alt="Restaurant" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">🍽️ Local Restaurant</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
+              </div>
             </div>
-
+            <div class="slide">
+              <img src="/images/slide6.jpg" alt="Local business" loading="lazy"/>
+              <div class="slide-caption">
+                <div class="slide-caption-text">🏪 Shop Local</div>
+                <div class="slide-caption-sub">NY Tri-State Area</div>
+              </div>
+            </div>
+            <div class="slide-dots" id="slideDots">
+              <div class="slide-dot active" onclick="goTo(0)"></div>
+              <div class="slide-dot" onclick="goTo(1)"></div>
+              <div class="slide-dot" onclick="goTo(2)"></div>
+              <div class="slide-dot" onclick="goTo(3)"></div>
+              <div class="slide-dot" onclick="goTo(4)"></div>
+              <div class="slide-dot" onclick="goTo(5)"></div>
+            </div>
           </div>
+          <script>
+            (function(){
+              var cur=0, slides, dots;
+              function init(){
+                slides=document.querySelectorAll('#heroSlideshow .slide');
+                dots=document.querySelectorAll('#slideDots .slide-dot');
+                setInterval(function(){ goTo((cur+1)%slides.length); }, 3500);
+              }
+              window.goTo=function(n){
+                slides[cur].classList.remove('active');
+                dots[cur].classList.remove('active');
+                cur=n;
+                slides[cur].classList.add('active');
+                dots[cur].classList.add('active');
+              };
+              if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',init); } else { init(); }
+            })();
+          </script>
         </div>
       </div>
     </div>
